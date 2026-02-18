@@ -157,12 +157,19 @@ This model integrates multiple cognitive processes to represent neural network t
 
 ## Component Implementation
 
+**Note on Code Examples**: This section mixes multiple languages to illustrate different aspects of the cognitive architecture:
+- **Lua code** (with `require 'torch'`, `require 'nn'`): Actual torch/nn neural network implementation
+- **Java-like pseudocode** (with `agent`, `statechart`, `class`): Conceptual AnyLogic agent-based and object-oriented modeling
+- **Declarative specifications** (with `stockAndFlow`, `pSystem`): High-level cognitive architecture patterns
+
+In a real implementation, the torch/nn neural network code runs in Lua, while the cognitive architecture components (DES process flows, ABM agents, SD stocks/flows) are modeled in AnyLogic using its visual modeling environment. The AtomSpace serves as the integration layer between these components.
+
 ### 1. Process Flow Engine (DES) - Training Loop
 
-The training loop is modeled as a discrete-event process:
+The training loop is modeled as a discrete-event process. This example shows how torch/nn Lua code integrates with the DES cognitive process:
 
 ```lua
--- Training Loop as DES Process
+-- Training Loop as DES Process (Lua implementation)
 -- Implemented in torch/nn with AnyCog integration
 
 require 'torch'
@@ -234,10 +241,10 @@ end
 
 ### 2. Agent-Based Modeling (ABM) - Neuron Agents
 
-Individual neurons are modeled as agents with behaviors:
+Individual neurons are modeled as agents with behaviors. Note: This is pseudocode in Java-like syntax to illustrate the AnyLogic agent-based modeling concepts. In practice, this would be implemented using AnyLogic's agent framework, while the actual neural network computation uses torch/nn in Lua.
 
 ```java
-// Neuron Agent Definition
+// Neuron Agent Definition (AnyLogic pseudocode for conceptual illustration)
 agent Neuron {
     // Properties
     int layerIndex;
@@ -305,10 +312,10 @@ agent Neuron {
 
 ### 3. System Dynamics Engine (SD) - Learning Rate Schedule
 
-Learning rate and gradient dynamics modeled as SD:
+Learning rate and gradient dynamics modeled as SD. This is AnyLogic System Dynamics pseudocode illustrating the conceptual stock-flow model:
 
 ```java
-// System Dynamics: Learning Rate Adaptation
+// System Dynamics: Learning Rate Adaptation (AnyLogic SD pseudocode)
 stockAndFlow {
     // Stock: Current Learning Rate
     stock LearningRate {
@@ -361,10 +368,10 @@ stockAndFlow {
 
 ### 4. P-System Membrane Computing - Parallel Layer Computation
 
-Layers as membranes with parallel neuron computation:
+Layers as membranes with parallel neuron computation. This illustrates the P-System conceptual model for parallel computation:
 
 ```java
-// P-System: Neural Network as Membrane Structure
+// P-System: Neural Network as Membrane Structure (P-System specification)
 pSystem NeuralNetworkPSystem {
     // Network membrane contains all layers
     membrane NetworkMembrane {
@@ -450,10 +457,10 @@ pSystem NeuralNetworkPSystem {
 
 ### 5. Integration Manager
 
-Coordinates all cognitive processes:
+Coordinates all cognitive processes. This shows the conceptual Java-like structure for the integration layer:
 
 ```java
-// Integration Manager for Neural Network Training
+// Integration Manager for Neural Network Training (Conceptual Java structure)
 class NeuralNetworkIntegrationManager extends IntegrationManager {
     
     // Component registry
@@ -1067,9 +1074,33 @@ optimNode = atomSpace:createNode("EntityNode", "SGDOptimizer")
 atomSpace:setState("LearningRate", optimState.learningRate)
 atomSpace:setState("Momentum", optimState.momentum)
 
--- Load MNIST Dataset (placeholder)
-trainData = loadMNISTTrain()
-testData = loadMNISTTest()
+-- Load MNIST Dataset
+-- Using torch dataset loader (install with: luarocks install mnist)
+-- Alternatively, use torch's built-in dataset utilities
+-- require 'mnist'
+-- trainData = mnist.traindataset()
+-- testData = mnist.testdataset()
+-- For this example, we'll use a placeholder structure:
+trainData = {
+    data = torch.Tensor(60000, 1, 28, 28),  -- 60k training images
+    labels = torch.LongTensor(60000),       -- corresponding labels
+    size = function() return 60000 end,
+    getBatch = function(self, batchIdx, batchSize)
+        local start = (batchIdx - 1) * batchSize + 1
+        local stop = math.min(batchIdx * batchSize, 60000)
+        return self.data[{{start, stop}}], self.labels[{{start, stop}}]
+    end
+}
+testData = {
+    data = torch.Tensor(10000, 1, 28, 28),  -- 10k test images
+    labels = torch.LongTensor(10000),
+    size = function() return 10000 end,
+    getBatch = function(self, batchIdx, batchSize)
+        local start = (batchIdx - 1) * batchSize + 1
+        local stop = math.min(batchIdx * batchSize, 10000)
+        return self.data[{{start, stop}}], self.labels[{{start, stop}}]
+    end
+}
 
 -- Register dataset in AtomSpace
 datasetNode = atomSpace:createNode("EntityNode", "MNIST_Dataset")
