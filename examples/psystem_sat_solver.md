@@ -511,12 +511,12 @@ public class WorkflowOptimization {
         desEngine.setParameters(optimalParams);
         
         // Log integration
-        messageBus.send(new IntegrationMessage(
-            from: "P-System",
-            to: "DES",
-            type: "OptimizationResult",
-            data: optimalParams
-        ));
+        IntegrationMessage msg = new IntegrationMessage();
+        msg.setFrom("P-System");
+        msg.setTo("DES");
+        msg.setType("OptimizationResult");
+        msg.setData(optimalParams);
+        messageBus.send(msg);
     }
 }
 ```
@@ -554,12 +554,12 @@ public class CognitiveAgent extends Agent {
         execute(bestAction);
         
         // Share decision with other agents
-        messageBus.broadcast(new AgentMessage(
-            this.getId(),
-            "DecisionMade",
-            bestAction,
-            internalReasoning.getExplanation()
-        ));
+        AgentMessage msg = new AgentMessage();
+        msg.setFrom(this.getId());
+        msg.setType("DecisionMade");
+        msg.setAction(bestAction);
+        msg.setRationale(internalReasoning.getExplanation());
+        messageBus.broadcast(msg);
     }
 }
 ```
@@ -668,10 +668,9 @@ public class SmartManufacturingSystem {
         }
         
         // 6. P-System selects optimal schedule
-        MembraneNode optimal = psystem.selectMultiObjectiveOptimal(
-            objectives: ["feasibility", "throughput", "material_time"],
-            weights: [0.3, 0.5, 0.2]
-        );
+        String[] objectives = {"feasibility", "throughput", "material_time"};
+        double[] weights = {0.3, 0.5, 0.2};
+        MembraneNode optimal = psystem.selectMultiObjectiveOptimal(objectives, weights);
         
         // 7. Apply schedule to all engines
         Schedule optimalSchedule = extractSchedule(optimal);
@@ -733,12 +732,12 @@ public class PSystemPatternMiner {
         // Check if growth is exponential (2^t pattern)
         boolean isExponential = checkExponentialGrowth(membraneCounts);
         
-        return new Pattern(
-            type: "ExponentialGrowth",
-            confidence: isExponential ? 1.0 : 0.0,
-            description: "Membranes grow exponentially during division phase",
-            implications: "Requires exponential space but achieves linear time"
-        );
+        Pattern pattern = new Pattern();
+        pattern.setType("ExponentialGrowth");
+        pattern.setConfidence(isExponential ? 1.0 : 0.0);
+        pattern.setDescription("Membranes grow exponentially during division phase");
+        pattern.setImplications("Requires exponential space but achieves linear time");
+        return pattern;
     }
 }
 ```
@@ -792,13 +791,13 @@ The Autognosis Layer monitors and optimizes P-system execution:
 ```java
 public class PSystemSelfMonitor {
     public PerformanceProfile monitor() {
-        return new PerformanceProfile(
-            divisionEfficiency: measureDivisionOverhead(),
-            parallelismUtilization: measureParallelismUtilization(),
-            memoryEfficiency: measureMemoryWaste(),
-            integrationOverhead: measureCrossEngineLatency(),
-            solutionQuality: measureOptimizationQuality()
-        );
+        PerformanceProfile profile = new PerformanceProfile();
+        profile.setDivisionEfficiency(measureDivisionOverhead());
+        profile.setParallelismUtilization(measureParallelismUtilization());
+        profile.setMemoryEfficiency(measureMemoryWaste());
+        profile.setIntegrationOverhead(measureCrossEngineLatency());
+        profile.setSolutionQuality(measureOptimizationQuality());
+        return profile;
     }
 }
 ```

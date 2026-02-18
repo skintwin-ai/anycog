@@ -654,12 +654,12 @@ int totalRules = psystem.getTotalRuleApplications();
 // Division: Create child membranes
 MembraneNode child1 = psystem.createChildMembrane(parent);
 MembraneNode child2 = psystem.createChildMembrane(parent);
-atomSpace.createLink(DivisionLink, parent, child1);
-atomSpace.createLink(DivisionLink, parent, child2);
+atomSpace.createLink("DivisionLink", parent, child1);
+atomSpace.createLink("DivisionLink", parent, child2);
 
 // Dissolution: Remove membrane and release contents
 psystem.dissolveMembrane(membrane);
-atomSpace.createLink(DissolveLink, membrane, parent);
+atomSpace.createLink("DissolveLink", membrane, parent);
 
 // Transport: Move objects between membranes
 psystem.transportObject(sourceMembrane, "object_x", targetMembrane);
@@ -726,9 +726,8 @@ class CognitiveAgent extends Agent {
     
     void makeDecision() {
         // Create decision membranes for alternatives
-        MembraneNode decisions = internalReasoning.createDecisionSpace(
-            alternatives: getAvailableActions()
-        );
+        List<Action> alternatives = getAvailableActions();
+        MembraneNode decisions = internalReasoning.createDecisionSpace(alternatives);
         
         // Parallel evaluation
         internalReasoning.evaluateAll();

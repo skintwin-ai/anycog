@@ -615,23 +615,23 @@ class PSystemIntegrationManager extends IntegrationManager {
 **P-System → Other Engines:**
 ```java
 // P-system sends optimization results
-messageBus.send(new Message(
-    from: "PSystem",
-    to: "DES",
-    type: "OptimalParameters",
-    data: optimalConfig
-));
+Message msg = new Message();
+msg.setFrom("PSystem");
+msg.setTo("DES");
+msg.setType("OptimalParameters");
+msg.setData(optimalConfig);
+messageBus.send(msg);
 ```
 
 **Other Engines → P-System:**
 ```java
 // DES sends evaluation requests
-messageBus.send(new Message(
-    from: "DES",
-    to: "PSystem",
-    type: "EvaluateConfiguration",
-    data: configToTest
-));
+Message msg = new Message();
+msg.setFrom("DES");
+msg.setTo("PSystem");
+msg.setType("EvaluateConfiguration");
+msg.setData(configToTest);
+messageBus.send(msg);
 ```
 
 ### Performance Considerations
