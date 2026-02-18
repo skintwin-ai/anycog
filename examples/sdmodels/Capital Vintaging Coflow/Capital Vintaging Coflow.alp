@@ -1,0 +1,4980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File 
+*************************************************	         
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.3.1.201806181547" AlpVersion="8.3.1">
+<Model>
+	<Id>1258729788644</Id>
+	<Name><![CDATA[Capital Vintaging Coflow]]></Name>
+	<Description><![CDATA[This model has been converted automatically via AnyLogic import feature from Vensim® model "CAPITALV1.mdl"]]></Description>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[capitalv]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1258729788645</Id>
+			<Name><![CDATA[Main]]></Name>
+			<Description><![CDATA[Main model class. Contains all system-dynamic variables and dependences]]></Description>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1490782877258</Id>
+				<Name><![CDATA[1490782877258]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameters:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>641</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>false</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1490860800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[0.125]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1490782877368</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<ConnectionsId>1390208911907</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1258729788810</Id>
+					<Name><![CDATA[WhiteNoise_random]]></Name>
+					<Description><![CDATA[This variable holds the value of random sample for variable WhiteNoise - FlowAuxVariable during time step in terms of Vensim®]]></Description>
+					<X>700</X><Y>1480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[uniform()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1258729788815</Id>
+					<Name><![CDATA[WhiteNoise0_random]]></Name>
+					<Description><![CDATA[This variable holds the value of random sample for variable WhiteNoise0 - FlowAuxVariable during time step in terms of Vensim®]]></Description>
+					<X>670</X><Y>2350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[uniform()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1490783415298</Id>
+					<Name><![CDATA[selectedViewArea]]></Name>
+					<X>-150</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ViewArea]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[viewCapitalVintagingAndFactorRequirements]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788648</Id>
+					<Name><![CDATA[AverageFactorIntensityOfCapital]]></Name>
+					<Description><![CDATA[The average factor intensity of the entire productive stock is the ratio 
+of total factor requirements to total capital.]]></Description>
+					<X>280</X><Y>630</Y>
+					<Label><X>-68</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[TotalFactorRequirementsOfCapital / TotalCapitalStock]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788649</Id>
+					<Name><![CDATA[TotalCapitalStock]]></Name>
+					<Description><![CDATA[The sum of each vintage of capital.]]></Description>
+					<X>220</X><Y>570</Y>
+					<Label><X>-48</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalVintage1 + CapitalVintage2 + CapitalVintage3]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788650</Id>
+					<Name><![CDATA[TotalFactorRequirementsOfCapital]]></Name>
+					<Description><![CDATA[The sum of the factor requirements of each vintage of capital.]]></Description>
+					<X>350</X><Y>570</Y>
+					<Label><X>-70</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[FactorRequirementsOfCapitalVintage1 + FactorRequirementsOfCapitalVintage2 + 
+FactorRequirementsOfCapitalVintage3]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788651</Id>
+					<Name><![CDATA[AverageLifeOfCapital]]></Name>
+					<Description><![CDATA[The average  total life of capital (the residence time in any cohort is 
+the average total life divided by the number of cohorts).]]></Description>
+					<X>770</X><Y>80</Y>
+					<Label><X>-50</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[20]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788662</Id>
+					<Name><![CDATA[ConstructionDelay]]></Name>
+					<Description><![CDATA[The average construction delay.]]></Description>
+					<X>330</X><Y>80</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[2]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788664</Id>
+					<Name><![CDATA[ExogenousConstructionStartRate]]></Name>
+					<Description><![CDATA[The construction start rate is exogenous.  A variety of test inputs allow users to 
+try different patterns,
+         including a step, pulse, sine wave, and random noise.]]></Description>
+					<X>530</X><Y>1200</Y>
+					<Label><X>-63</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[InitialCapitalAcquisitionRate * Input]]></Formula>
+						<Color/>
+						<Shadow>
+							<Id>1305111017715</Id>
+							<Name><![CDATA[<ExogenousConstructionStartRate>]]></Name>
+							<X>87</X><Y>110</Y>
+							<Label><X>-52</X><Y>-15</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788665</Id>
+					<Name><![CDATA[ExogenousMarginalFactorIntensity]]></Name>
+					<Description><![CDATA[The marginal factor intensity of new capital is exogenous.  A variety of test inputs 
+allow users to try different patterns,
+         including a step, pulse, sine wave, and random noise.]]></Description>
+					<X>540</X><Y>2070</Y>
+					<Label><X>-69</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[InitialLaborRequirementsOfCapital * Input0]]></Formula>
+						<Color/>
+						<Shadow>
+							<Id>1305111017716</Id>
+							<Name><![CDATA[<ExogenousMarginalFactorIntensity>]]></Name>
+							<X>40</X><Y>470</Y>
+							<Label><X>-37</X><Y>20</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788668</Id>
+					<Name><![CDATA[ExponentialGrowthTime]]></Name>
+					<Description><![CDATA[The time at which exponential growth in the test input begins.]]></Description>
+					<X>460</X><Y>1400</Y>
+					<Label><X>-40</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788669</Id>
+					<Name><![CDATA[ExponentialGrowthTime0]]></Name>
+					<Description><![CDATA[The time at which exponential growth in the test input begins.]]></Description>
+					<X>400</X><Y>2230</Y>
+					<Label><X>-40</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788670</Id>
+					<Name><![CDATA[FactorIntensityOfCapital1]]></Name>
+					<Description><![CDATA[The number of factor units required per unit of capital in vintage 1 .   
+Given by the ratio of total factor requirements for the vintage to the 
+total capital stock in the vintage.]]></Description>
+					<X>487</X><Y>300</Y>
+					<Label><X>-50</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[FactorRequirementsOfCapitalVintage1 / CapitalVintage1]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788671</Id>
+					<Name><![CDATA[FactorIntensityOfCapital2]]></Name>
+					<Description><![CDATA[The number of factor units required per unit of capital in vintage 2 .   
+Given by the ratio of total factor requirements for the vintage to the 
+total capital stock in the vintage.]]></Description>
+					<X>677</X><Y>300</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[FactorRequirementsOfCapitalVintage2 / CapitalVintage2]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788672</Id>
+					<Name><![CDATA[FactorIntensityOfCapital3]]></Name>
+					<Description><![CDATA[The number of factor units required per unit of capital in vintage 3 .   
+Given by the ratio of total factor requirements for the vintage to the 
+total capital stock in the vintage.]]></Description>
+					<X>877</X><Y>300</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[FactorRequirementsOfCapitalVintage3 / CapitalVintage3]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788673</Id>
+					<Name><![CDATA[FactorIntensityOfCapitalUnderConstruction]]></Name>
+					<Description><![CDATA[The number of factor units required per unit of capitalunder construction 
+.   Given by the ratio of total factor requirements for the capital under 
+construction to the capital under construction itself.]]></Description>
+					<X>297</X><Y>300</Y>
+					<Label><X>-100</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[FactorRequirementsOfCapitalUnderConstruction / CapitalUnderConstruction]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788674</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction]]></Name>
+					<Description><![CDATA[The number of factor units required per unit of capital ordered today (on 
+the margin).  Determined exogenously for testing purposes.]]></Description>
+					<X>260</X><Y>530</Y>
+					<Label><X>-20</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[ExogenousMarginalFactorIntensity]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788683</Id>
+					<Name><![CDATA[InitialCapitalAcquisitionRate]]></Name>
+					<Description><![CDATA[Initial value of customer orders, set to 10,000 widgets per week.]]></Description>
+					<X>380</X><Y>1230</Y>
+					<Label><X>-47</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[100]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788684</Id>
+					<Name><![CDATA[InitialLaborRequirementsOfCapital]]></Name>
+					<Description><![CDATA[Initial Factor Intensity of New Units]]></Description>
+					<X>370</X><Y>2090</Y>
+					<Label><X>-56</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[100]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788685</Id>
+					<Name><![CDATA[Input]]></Name>
+					<Description><![CDATA[Input is a dimensionless variable which provides a variety of test input patterns, 
+including a step,
+         pulse, sine wave, and random noise.]]></Description>
+					<X>290</X><Y>1390</Y>
+					<Label><X>-22</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[1 + step( StepHeight, StepTime ) + ( PulseQuantity / TIME_STEP ) * pulse( 
+PulseTime, TIME_STEP) + ramp( RampSlope, RampStartTime, RampEndTime ) + ( step( 
+1, ExponentialGrowthTime ) * ( exp( ExponentialGrowthRate * ( time() - 
+ExponentialGrowthTime ) ) - 1 ) ) + SineAmplitude * sin( 2 * 3.14159 * time() / 
+SinePeriod ) + step( 1, NoiseStartTime ) * PinkNoise]]></Formula>
+						<Color/>
+						<Shadow>
+							<Id>1305111017721</Id>
+							<Name><![CDATA[<Input>]]></Name>
+							<X>380</X><Y>1180</Y>
+							<Label><X>-31</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788686</Id>
+					<Name><![CDATA[Input0]]></Name>
+					<Description><![CDATA[Input is a dimensionless variable which provides a variety of test input patterns, 
+including a step,
+         pulse, sine wave, and random noise.]]></Description>
+					<X>260</X><Y>2260</Y>
+					<Label><X>-28</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[1 + step( StepHeight0, StepTime0 ) + ( PulseQuantity0 / TIME_STEP ) * pulse( 
+PulseTime0, TIME_STEP ) + ramp( RampSlope0, RampStartTime0, RampEndTime0 ) + ( 
+step( 1, ExponentialGrowthTime0 ) * ( exp( ExponentialGrowthRate0 * ( time() - 
+ExponentialGrowthTime0 ) ) - 1 ) ) + SineAmplitude0 * sin( 2 * 3.14159 * time() / 
+SinePeriod0 ) + step( 1, NoiseStartTime0 ) * PinkNoise0]]></Formula>
+						<Color/>
+						<Shadow>
+							<Id>1305111017722</Id>
+							<Name><![CDATA[<Input0>]]></Name>
+							<X>380</X><Y>2040</Y>
+							<Label><X>-37</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788687</Id>
+					<Name><![CDATA[NoiseCorrelationTime]]></Name>
+					<Description><![CDATA[The correlation time constant for Pink Noise.]]></Description>
+					<X>800</X><Y>1410</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[4]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788688</Id>
+					<Name><![CDATA[NoiseCorrelationTime0]]></Name>
+					<Description><![CDATA[The correlation time constant for Pink Noise.]]></Description>
+					<X>760</X><Y>2280</Y>
+					<Label><X>10</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[4]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788691</Id>
+					<Name><![CDATA[NoiseStartTime]]></Name>
+					<Description><![CDATA[Start time for the random input.]]></Description>
+					<X>260</X><Y>1310</Y>
+					<Label><X>-60</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788692</Id>
+					<Name><![CDATA[NoiseStartTime0]]></Name>
+					<Description><![CDATA[Start time for the random input.]]></Description>
+					<X>230</X><Y>2180</Y>
+					<Label><X>-60</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788697</Id>
+					<Name><![CDATA[PulseTime]]></Name>
+					<Description><![CDATA[Time at which the pulse in Input occurs.]]></Description>
+					<X>400</X><Y>1320</Y>
+					<Label><X>10</X><Y>-5</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788698</Id>
+					<Name><![CDATA[PulseTime0]]></Name>
+					<Description><![CDATA[Time at which the pulse in Input occurs.]]></Description>
+					<X>360</X><Y>2260</Y>
+					<Label><X>5</X><Y>15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788699</Id>
+					<Name><![CDATA[RampEndTime]]></Name>
+					<Description><![CDATA[End time for the ramp input.]]></Description>
+					<X>230</X><Y>1480</Y>
+					<Label><X>-63</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[1e+009]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788700</Id>
+					<Name><![CDATA[RampEndTime0]]></Name>
+					<Description><![CDATA[End time for the ramp input.]]></Description>
+					<X>190</X><Y>2350</Y>
+					<Label><X>-69</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[1e+009]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788703</Id>
+					<Name><![CDATA[RampStartTime]]></Name>
+					<Description><![CDATA[Start time for the ramp input.]]></Description>
+					<X>190</X><Y>1450</Y>
+					<Label><X>-65</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788704</Id>
+					<Name><![CDATA[RampStartTime0]]></Name>
+					<Description><![CDATA[Start time for the ramp input.]]></Description>
+					<X>150</X><Y>2320</Y>
+					<Label><X>-72</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788708</Id>
+					<Name><![CDATA[SinePeriod]]></Name>
+					<Description><![CDATA[Period of sine wave in customer demand.  Set initially to 50 weeks (1 
+year).]]></Description>
+					<X>390</X><Y>1460</Y>
+					<Label><X>-30</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[50]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788709</Id>
+					<Name><![CDATA[SinePeriod0]]></Name>
+					<Description><![CDATA[Period of sine wave in customer demand.  Set initially to 50 weeks (1 
+year).]]></Description>
+					<X>350</X><Y>2320</Y>
+					<Label><X>-30</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[50]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788712</Id>
+					<Name><![CDATA[StepTime]]></Name>
+					<Description><![CDATA[Time for the step input.]]></Description>
+					<X>340</X><Y>1480</Y>
+					<Label><X>-30</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788713</Id>
+					<Name><![CDATA[StepTime0]]></Name>
+					<Description><![CDATA[Time for the step input.]]></Description>
+					<X>310</X><Y>2350</Y>
+					<Label><X>-47</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[5]]></Value>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788714</Id>
+					<Name><![CDATA[WhiteNoise]]></Name>
+					<Description><![CDATA[White noise input to the pink noise process.]]></Description>
+					<X>670</X><Y>1430</Y>
+					<Label><X>-25</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[NoiseStandardDeviation * ( pow( ( 24 * NoiseCorrelationTime / TIME_STEP ), 0.5 ) * ( 
+WhiteNoise_random - 0.5 ) )]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1258729788715</Id>
+					<Name><![CDATA[WhiteNoise0]]></Name>
+					<Description><![CDATA[White noise input to the pink noise process.]]></Description>
+					<X>630</X><Y>2300</Y>
+					<Label><X>-20</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="false" Array="false">
+						<Formula><![CDATA[NoiseStandardDeviation0 * ( pow( ( 24 * NoiseCorrelationTime0 / TIME_STEP ), 0.5 ) * ( 
+WhiteNoise0_random - 0.5 ) )]]></Formula>
+						<Color/>
+					</Properties>
+
+				</Variable>
+				<Variable Class="AuxVariable">
+					<Id>1259238164795</Id>
+					<Name><![CDATA[TIME_STEP]]></Name>
+					<X>20</X><Y>-80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties External="false" Constant="true" Array="false">
+						<Value><![CDATA[0.125]]></Value>
+						<Color/>
+						<Shadow>
+							<Id>1305111017726</Id>
+							<Name><![CDATA[<TIME_STEP>]]></Name>
+							<X>300</X><Y>2060</Y>
+							<Label><X>-30</X><Y>20</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+						<Shadow>
+							<Id>1305111017725</Id>
+							<Name><![CDATA[<TIME_STEP>]]></Name>
+							<X>590</X><Y>1360</Y>
+							<Label><X>-30</X><Y>20</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+						<Shadow>
+							<Id>1305111017727</Id>
+							<Name><![CDATA[<TIME_STEP>]]></Name>
+							<X>290</X><Y>1210</Y>
+							<Label><X>-20</X><Y>10</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+						<Shadow>
+							<Id>1305111017724</Id>
+							<Name><![CDATA[<TIME_STEP>]]></Name>
+							<X>540</X><Y>2270</Y>
+							<Label><X>-30</X><Y>20</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788656</Id>
+					<Name><![CDATA[CapitalUnderConstruction]]></Name>
+					<Description><![CDATA[Capital on order and under construction.]]></Description>
+					<X>297</X><Y>150</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[+ConstructionStarts - CapitalAcquisition]]></Expression>
+						<InitialValue><![CDATA[ConstructionStarts * ConstructionDelay]]></InitialValue>
+						<Color/>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788657</Id>
+					<Name><![CDATA[CapitalVintage1]]></Name>
+					<Description><![CDATA[Capital in the first vintage.  Initialized in equilibrium.]]></Description>
+					<X>480</X><Y>150</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[CapitalAcquisition - CapitalAging1]]></Expression>
+						<InitialValue><![CDATA[ConstructionStarts * ( AverageLifeOfCapital / 3 )]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017812</Id>
+							<Name><![CDATA[<CapitalVintage1>]]></Name>
+							<X>90</X><Y>510</Y>
+							<Label><X>-40</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788658</Id>
+					<Name><![CDATA[CapitalVintage2]]></Name>
+					<Description><![CDATA[Capital in the second vintage.  Initialized in equilibrium.]]></Description>
+					<X>650</X><Y>150</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[CapitalAging1 - CapitalAging2]]></Expression>
+						<InitialValue><![CDATA[ConstructionStarts * ( AverageLifeOfCapital / 3 )]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017817</Id>
+							<Name><![CDATA[<CapitalVintage2>]]></Name>
+							<X>90</X><Y>570</Y>
+							<Label><X>-41</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788659</Id>
+					<Name><![CDATA[CapitalVintage3]]></Name>
+					<Description><![CDATA[Capital in the third vintage.  Initialized in equilibrium.]]></Description>
+					<X>810</X><Y>150</Y>
+					<Label><X>-50</X><Y>16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[CapitalAging2 - CapitalDiscards]]></Expression>
+						<InitialValue><![CDATA[ConstructionStarts * ( AverageLifeOfCapital / 3 )]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017813</Id>
+							<Name><![CDATA[<CapitalVintage3>]]></Name>
+							<X>90</X><Y>620</Y>
+							<Label><X>-39</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788675</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<Description><![CDATA[The total factor that will be required to operate the capital under 
+construction once it enters the productive stock.]]></Description>
+					<X>297</X><Y>430</Y>
+					<Label><X>-137</X><Y>30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[+IncreaseInFactorRequirementsOfCapitalUnderConstruction - 
+IncreaseInFactorRequirementsOfCapital1]]></Expression>
+						<InitialValue><![CDATA[FactorIntensityOfNewConstruction * CapitalUnderConstruction]]></InitialValue>
+						<Color/>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788676</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage1]]></Name>
+					<X>480</X><Y>430</Y>
+					<Label><X>-57</X><Y>30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[IncreaseInFactorRequirementsOfCapital1 - IncreaseInFactorRequirementsOfCapital2]]></Expression>
+						<InitialValue><![CDATA[FactorIntensityOfNewConstruction * CapitalVintage1]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017815</Id>
+							<Name><![CDATA[<FactorRequirementsOfCapitalVintage1>]]></Name>
+							<X>500</X><Y>510</Y>
+							<Label><X>-66</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788677</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage2]]></Name>
+					<Description><![CDATA[The total factor required to operate the capital in vintage 2.]]></Description>
+					<X>650</X><Y>430</Y>
+					<Label><X>-27</X><Y>30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[IncreaseInFactorRequirementsOfCapital2 - IncreaseInFactorRequirementsOfCapital3]]></Expression>
+						<InitialValue><![CDATA[FactorIntensityOfNewConstruction * CapitalVintage2]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017816</Id>
+							<Name><![CDATA[<FactorRequirementsOfCapitalVintage2>]]></Name>
+							<X>500</X><Y>580</Y>
+							<Label><X>-66</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788678</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage3]]></Name>
+					<Description><![CDATA[The total factor required to operate the capital in vintage 3.]]></Description>
+					<X>810</X><Y>430</Y>
+					<Label><X>-95</X><Y>15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[IncreaseInFactorRequirementsOfCapital3 - 
+ReductionInFactorRequirementsFromDiscards]]></Expression>
+						<InitialValue><![CDATA[FactorIntensityOfNewConstruction * CapitalVintage3]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017814</Id>
+							<Name><![CDATA[<FactorRequirementsOfCapitalVintage3>]]></Name>
+							<X>490</X><Y>630</Y>
+							<Label><X>-70</X><Y>16</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788693</Id>
+					<Name><![CDATA[PinkNoise]]></Name>
+					<Description><![CDATA[Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic 
+noise input to
+        models in which the next random shock depends in part on the previous 
+shocks.  The user
+        can specify the correlation time.  The mean is 0 and the standard deviation 
+is specified
+         by the user.]]></Description>
+					<X>650</X><Y>1330</Y>
+					<Label><X>-35</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[ChangeInPinkNoise]]></Expression>
+						<InitialValue><![CDATA[0]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017811</Id>
+							<Name><![CDATA[<PinkNoise>]]></Name>
+							<X>220</X><Y>1340</Y>
+							<Label><X>-85</X><Y>0</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="StockVariable">
+					<Id>1258729788694</Id>
+					<Name><![CDATA[PinkNoise0]]></Name>
+					<Description><![CDATA[Pink Noise is first-order autocorrelated noise.  Pink noise provides a realistic 
+noise input to
+        models in which the next random shock depends in part on the previous 
+shocks.  The user
+        can specify the correlation time.  The mean is 0 and the standard deviation 
+is specified
+         by the user.]]></Description>
+					<X>610</X><Y>2200</Y>
+					<Label><X>-35</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Array="false">
+					<EquationStyle>classic</EquationStyle>
+					<Width>20</Width>
+					<Height>20</Height>
+						<Expression><![CDATA[ChangeInPinkNoise0]]></Expression>
+						<InitialValue><![CDATA[0]]></InitialValue>
+						<Color/>
+						<Shadow>
+							<Id>1305111017810</Id>
+							<Name><![CDATA[<PinkNoise0>]]></Name>
+							<X>170</X><Y>2220</Y>
+							<Label><X>-55</X><Y>-20</Y></Label>
+							<PublicFlag>false</PublicFlag>
+							<PresentationFlag>true</PresentationFlag>
+							<ShowLabel>true</ShowLabel>
+						</Shadow>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788652</Id>
+					<Name><![CDATA[CapitalAcquisition]]></Name>
+					<Description><![CDATA[Capital is acquired after an average delay given by the Construction 
+Delay.  A first-order process is assumed, but in general any higher-order 
+delay may be used.]]></Description>
+					<X>297</X><Y>150</Y>
+					<Label><X>-60</X><Y>50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788656" TargetId="1258729788657" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalUnderConstruction / ConstructionDelay]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>91</X><Y>0</Y></Point>
+							<Point><X>183</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788653</Id>
+					<Name><![CDATA[CapitalAging1]]></Name>
+					<Description><![CDATA[Capitalages from vintage 1 to vintage 2 by a first-order process.  The 
+average residence time in the cohort is 1/3 the average life of capital.]]></Description>
+					<X>480</X><Y>150</Y>
+					<Label><X>-40</X><Y>50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788657" TargetId="1258729788658" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalVintage1 / ( AverageLifeOfCapital / 3 )]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>85</X><Y>0</Y></Point>
+							<Point><X>170</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788654</Id>
+					<Name><![CDATA[CapitalAging2]]></Name>
+					<Description><![CDATA[Capitalages from vintage 2 to vintage 3 by a first-order process.  The 
+average residence time in the cohort is 1/3 the average life of capital.]]></Description>
+					<X>650</X><Y>150</Y>
+					<Label><X>-40</X><Y>50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788658" TargetId="1258729788659" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalVintage2 / ( AverageLifeOfCapital / 3 )]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>80</X><Y>0</Y></Point>
+							<Point><X>160</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788655</Id>
+					<Name><![CDATA[CapitalDiscards]]></Name>
+					<Description><![CDATA[Capital is discarded from the final cohort.  The average residence time in 
+the final cohort is 1/3 the average life of capital.]]></Description>
+					<X>810</X><Y>150</Y>
+					<Label><X>-50</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788659" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalVintage3 / ( AverageLifeOfCapital / 3 )]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>75</X><Y>0</Y></Point>
+							<Point><X>150</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788660</Id>
+					<Name><![CDATA[ChangeInPinkNoise]]></Name>
+					<Description><![CDATA[Change in the pink noise value; Pink noise is a first order exponential smoothing 
+delay of the white
+         noise input.]]></Description>
+					<X>830</X><Y>1330</Y>
+					<Label><X>-55</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TargetId="1258729788693" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[( WhiteNoise - PinkNoise ) / NoiseCorrelationTime]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>-90</X><Y>0</Y></Point>
+							<Point><X>-180</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788661</Id>
+					<Name><![CDATA[ChangeInPinkNoise0]]></Name>
+					<Description><![CDATA[Change in the pink noise value; Pink noise is a first order exponential smoothing 
+delay of the white
+         noise input.]]></Description>
+					<X>790</X><Y>2200</Y>
+					<Label><X>-60</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TargetId="1258729788694" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[( WhiteNoise0 - PinkNoise0 ) / NoiseCorrelationTime0]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>-90</X><Y>0</Y></Point>
+							<Point><X>-180</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788663</Id>
+					<Name><![CDATA[ConstructionStarts]]></Name>
+					<Description><![CDATA[Construction starts are exogenous for testing purposes.]]></Description>
+					<X>117</X><Y>150</Y>
+					<Label><X>-60</X><Y>50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TargetId="1258729788656" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[ExogenousConstructionStartRate]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>90</X><Y>0</Y></Point>
+							<Point><X>180</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788679</Id>
+					<Name><![CDATA[IncreaseInFactorRequirementsOfCapital1]]></Name>
+					<Description><![CDATA[Factor requirements of the capital under construction are reduced by the 
+average for the the supply line when units move into the first vintage of 
+productive capital.]]></Description>
+					<X>297</X><Y>430</Y>
+					<Label><X>-118</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788675" TargetId="1258729788676" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalAcquisition * FactorIntensityOfCapitalUnderConstruction]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>91</X><Y>0</Y></Point>
+							<Point><X>183</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788680</Id>
+					<Name><![CDATA[IncreaseInFactorRequirementsOfCapital2]]></Name>
+					<Description><![CDATA[Factor requirements of the source vintage are reduced by the average for 
+the vintage when units move into the next vintage.]]></Description>
+					<X>480</X><Y>430</Y>
+					<Label><X>-120</X><Y>-30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788676" TargetId="1258729788677" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalAging1 * FactorIntensityOfCapital1]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>85</X><Y>0</Y></Point>
+							<Point><X>170</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788681</Id>
+					<Name><![CDATA[IncreaseInFactorRequirementsOfCapital3]]></Name>
+					<Description><![CDATA[Factor requirements of the source vintage are reduced by the average for 
+the vintage when units move into the next vintage.]]></Description>
+					<X>650</X><Y>430</Y>
+					<Label><X>-120</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788677" TargetId="1258729788678" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalAging2 * FactorIntensityOfCapital2]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>80</X><Y>0</Y></Point>
+							<Point><X>160</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788682</Id>
+					<Name><![CDATA[IncreaseInFactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<Description><![CDATA[The factor requirements of the supply line of capital under construction 
+are increased by the marginal requirements per unit of new capital ordered.]]></Description>
+					<X>117</X><Y>430</Y>
+					<Label><X>-175</X><Y>-30</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TargetId="1258729788675" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[ConstructionStarts * FactorIntensityOfNewConstruction]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>90</X><Y>0</Y></Point>
+							<Point><X>180</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Flow">
+					<Id>1258729788705</Id>
+					<Name><![CDATA[ReductionInFactorRequirementsFromDiscards]]></Name>
+					<Description><![CDATA[Factor requirements are reduced by the average for the vintage when units 
+exit the vintage.]]></Description>
+					<X>810</X><Y>430</Y>
+					<Label><X>-130</X><Y>-50</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SourceId="1258729788678" External="false" Constant="false" Array="false">
+						<Formula><![CDATA[CapitalDiscards * FactorIntensityOfCapital3]]></Formula>
+						<Color/>
+						<ValveIndex>1</ValveIndex>
+						<Points>
+							<Point><X>0</X><Y>0</Y></Point>
+							<Point><X>75</X><Y>0</Y></Point>
+							<Point><X>150</X><Y>0</Y></Point>
+						</Points>
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242064468</Id>
+					<Name><![CDATA[PulseQuantity]]></Name>
+					<X>330</X><Y>1300</Y>
+					<Label><X>-30</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.2]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242064466</Id>
+							<Label><![CDATA[Pulse quantity]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242064471</Id>
+					<Name><![CDATA[RampSlope]]></Name>
+					<X>160</X><Y>1410</Y>
+					<Label><X>-30</X><Y>15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.34]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242064469</Id>
+							<Label><![CDATA[Ramp slope]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242064474</Id>
+					<Name><![CDATA[SineAmplitude]]></Name>
+					<X>423</X><Y>1440</Y>
+					<Label><X>-18</X><Y>15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.28]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242064472</Id>
+							<Label><![CDATA[Sine amplitude]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242064478</Id>
+					<Name><![CDATA[StepHeight]]></Name>
+					<X>280</X><Y>1500</Y>
+					<Label><X>-40</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242064476</Id>
+							<Label><![CDATA[Step height]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242064481</Id>
+					<Name><![CDATA[ExponentialGrowthRate]]></Name>
+					<X>430</X><Y>1350</Y>
+					<Label><X>-20</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.5]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242064479</Id>
+							<Label><![CDATA[Exp. growth rate]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242178732</Id>
+					<Name><![CDATA[NoiseStandardDeviation]]></Name>
+					<X>570</X><Y>1470</Y>
+					<Label><X>-60</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.68]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242178730</Id>
+							<Label><![CDATA[Noise stand. dev.]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242236777</Id>
+					<Name><![CDATA[PulseQuantity0]]></Name>
+					<X>310</X><Y>2170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242236775</Id>
+							<Label><![CDATA[Pulse quantity 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242236780</Id>
+					<Name><![CDATA[RampSlope0]]></Name>
+					<X>123</X><Y>2271</Y>
+					<Label><X>-30</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.23]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242236778</Id>
+							<Label><![CDATA[Ramp slope 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242236783</Id>
+					<Name><![CDATA[SineAmplitude0]]></Name>
+					<X>386</X><Y>2295</Y>
+					<Label><X>-20</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.31]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242236781</Id>
+							<Label><![CDATA[Sine amplitude 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242236786</Id>
+					<Name><![CDATA[StepHeight0]]></Name>
+					<X>240</X><Y>2370</Y>
+					<Label><X>-40</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242236784</Id>
+							<Label><![CDATA[Step height 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259242236789</Id>
+					<Name><![CDATA[ExponentialGrowthRate0]]></Name>
+					<X>350</X><Y>2200</Y>
+					<Label><X>10</X><Y>-5</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259242236787</Id>
+							<Label><![CDATA[Exp. growth rate 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1259243872940</Id>
+					<Name><![CDATA[NoiseStandardDeviation0]]></Name>
+					<X>540</X><Y>2340</Y>
+					<Label><X>-60</X><Y>20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.76]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1259243872938</Id>
+							<Label><![CDATA[Noise stand. dev. 0]]></Label>
+							<EditorContolType>SLIDER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[2]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<Dependences>
+				<Link SourceId="1258729788656" TargetId="1258729788673" Polarity="null">
+					<Height>-27.430922012777486</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>150</Y></Direction>
+					<Id>1305111017728</Id>
+					<Name><![CDATA[CapitalUnderConstruction - FactorIntensityOfCapitalUnderConstruction]]></Name>
+					<X>297</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788673" TargetId="1258729788679" Polarity="null">
+					<Height>18.039657897285963</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>130</Y></Direction>
+					<Id>1305111017729</Id>
+					<Name><![CDATA[FactorIntensityOfCapitalUnderConstruction - IncreaseInFactorRequirementsOfCapital1]]></Name>
+					<X>297</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788704" TargetId="1258729788686" Polarity="null">
+					<Height>-0.5715754551183636</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>110</X><Y>-60</Y></Direction>
+					<Id>1305111017730</Id>
+					<Name><![CDATA[RampStartTime0 - Input0]]></Name>
+					<X>150</X><Y>2320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788678" TargetId="1258729788672" Polarity="null">
+					<Height>42.281591461736156</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>67</X><Y>-130</Y></Direction>
+					<Id>1305111017731</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage3 - FactorIntensityOfCapital3]]></Name>
+					<X>810</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788687" TargetId="1258729788714" Polarity="null">
+					<Height>27.581318571582784</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-130</X><Y>20</Y></Direction>
+					<Id>1305111017732</Id>
+					<Name><![CDATA[NoiseCorrelationTime - WhiteNoise]]></Name>
+					<X>800</X><Y>1410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788713" TargetId="1258729788686" Polarity="null">
+					<Height>-1.172904427505955</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-50</X><Y>-90</Y></Direction>
+					<Id>1305111017733</Id>
+					<Name><![CDATA[StepTime0 - Input0]]></Name>
+					<X>310</X><Y>2350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788652" TargetId="1258729788679" Polarity="null">
+					<Height>25.01889860292556</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017734</Id>
+					<Name><![CDATA[CapitalAcquisition - IncreaseInFactorRequirementsOfCapital1]]></Name>
+					<X>397</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788653" TargetId="1258729788680" Polarity="null">
+					<Height>25.60932660451124</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017735</Id>
+					<Name><![CDATA[CapitalAging1 - IncreaseInFactorRequirementsOfCapital2]]></Name>
+					<X>587</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788668" TargetId="1258729788685" Polarity="null">
+					<Height>-8.530621892333536E9</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-170</X><Y>-10</Y></Direction>
+					<Id>1305111017736</Id>
+					<Name><![CDATA[ExponentialGrowthTime - Input]]></Name>
+					<X>460</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788694" TargetId="1258729788661" Polarity="null">
+					<Height>-51.011025686518074</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>97</X><Y>0</Y></Direction>
+					<Id>1305111017737</Id>
+					<Name><![CDATA[PinkNoise0 - ChangeInPinkNoise0]]></Name>
+					<X>610</X><Y>2200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788697" TargetId="1258729788685" Polarity="null">
+					<Height>3.2009960012192096</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-110</X><Y>70</Y></Direction>
+					<Id>1305111017738</Id>
+					<Name><![CDATA[PulseTime - Input]]></Name>
+					<X>400</X><Y>1320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788650" TargetId="1258729788648" Polarity="null">
+					<Height>10.862798049960546</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-70</X><Y>60</Y></Direction>
+					<Id>1305111017739</Id>
+					<Name><![CDATA[TotalFactorRequirementsOfCapital - AverageFactorIntensityOfCapital]]></Name>
+					<X>350</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788657" TargetId="1258729788653" Polarity="null">
+					<Height>-49.56092731609829</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>107</X><Y>0</Y></Direction>
+					<Id>1305111017740</Id>
+					<Name><![CDATA[CapitalVintage1 - CapitalAging1]]></Name>
+					<X>480</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242064474" TargetId="1258729788685" Polarity="null">
+					<Height>-1.04733813362418</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-133</X><Y>-50</Y></Direction>
+					<Id>1305111017741</Id>
+					<Name><![CDATA[SineAmplitude - Input]]></Name>
+					<X>423</X><Y>1440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017810" TargetId="1258729788686" Polarity="null">
+					<Height>-3.4710010397692486</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>90</X><Y>40</Y></Direction>
+					<Id>1305111017742</Id>
+					<Name><![CDATA[<PinkNoise0> - Input0]]></Name>
+					<X>170</X><Y>2220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788669" TargetId="1258729788686" Polarity="null">
+					<Height>-0.493710343438579</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-140</X><Y>30</Y></Direction>
+					<Id>1305111017743</Id>
+					<Name><![CDATA[ExponentialGrowthTime0 - Input0]]></Name>
+					<X>400</X><Y>2230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788658" TargetId="1258729788671" Polarity="null">
+					<Height>-34.181302061545495</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>27</X><Y>150</Y></Direction>
+					<Id>1305111017744</Id>
+					<Name><![CDATA[CapitalVintage2 - FactorIntensityOfCapital2]]></Name>
+					<X>650</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017811" TargetId="1258729788685" Polarity="null">
+					<Height>-2.5046778757850916</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>70</X><Y>50</Y></Direction>
+					<Id>1305111017745</Id>
+					<Name><![CDATA[<PinkNoise> - Input]]></Name>
+					<X>220</X><Y>1340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788677" TargetId="1258729788671" Polarity="null">
+					<Height>39.00678819893714</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>27</X><Y>-130</Y></Direction>
+					<Id>1305111017746</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage2 - FactorIntensityOfCapital2]]></Name>
+					<X>650</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017716" TargetId="1258729788674" Polarity="null">
+					<Height>23.443444907232873</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>200</X><Y>180</Y></Direction>
+					<Id>1305111017747</Id>
+					<Name><![CDATA[<ExogenousMarginalFactorIntensity> - FactorIntensityOfNewConstruction]]></Name>
+					<X>60</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-2147483648</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017814" TargetId="1258729788650" Polarity="null">
+					<Height>-6.724917665885755</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-140</X><Y>-60</Y></Direction>
+					<Id>1305111017748</Id>
+					<Name><![CDATA[<FactorRequirementsOfCapitalVintage3> - TotalFactorRequirementsOfCapital]]></Name>
+					<X>490</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788653" Polarity="null">
+					<Height>-29.067414544721856</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-183</X><Y>70</Y></Direction>
+					<Id>1305111017749</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalAging1]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017715" TargetId="1258729788663" Polarity="null">
+					<Height>-67.8582670500239</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>113</X><Y>40</Y></Direction>
+					<Id>1305111017750</Id>
+					<Name><![CDATA[<ExogenousConstructionStartRate> - ConstructionStarts]]></Name>
+					<X>87</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-2147483648</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788676" TargetId="1258729788670" Polarity="null">
+					<Height>36.99135784025728</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>7</X><Y>-130</Y></Direction>
+					<Id>1305111017751</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalVintage1 - FactorIntensityOfCapital1]]></Name>
+					<X>480</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788683" TargetId="1258729788664" Polarity="null">
+					<Height>-1.0225304244286235</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>150</X><Y>-30</Y></Direction>
+					<Id>1305111017752</Id>
+					<Name><![CDATA[InitialCapitalAcquisitionRate - ExogenousConstructionStartRate]]></Name>
+					<X>380</X><Y>1230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788654" TargetId="1258729788681" Polarity="null">
+					<Height>19.655903289881167</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017753</Id>
+					<Name><![CDATA[CapitalAging2 - IncreaseInFactorRequirementsOfCapital3]]></Name>
+					<X>776</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788688" TargetId="1258729788661" Polarity="null">
+					<Height>-21.024465052350678</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-53</X><Y>-80</Y></Direction>
+					<Id>1305111017754</Id>
+					<Name><![CDATA[NoiseCorrelationTime0 - ChangeInPinkNoise0]]></Name>
+					<X>760</X><Y>2280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788658" TargetId="1258729788654" Polarity="null">
+					<Height>-49.46126727503098</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>106</X><Y>0</Y></Direction>
+					<Id>1305111017755</Id>
+					<Name><![CDATA[CapitalVintage2 - CapitalAging2]]></Name>
+					<X>650</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017813" TargetId="1258729788649" Polarity="null">
+					<Height>1.9363120206921849</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>130</X><Y>-50</Y></Direction>
+					<Id>1305111017756</Id>
+					<Name><![CDATA[<CapitalVintage3> - TotalCapitalStock]]></Name>
+					<X>90</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242064478" TargetId="1258729788685" Polarity="null">
+					<Height>-4.821345758163488</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>10</X><Y>-110</Y></Direction>
+					<Id>1305111017757</Id>
+					<Name><![CDATA[StepHeight - Input]]></Name>
+					<X>280</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788670" TargetId="1258729788680" Polarity="null">
+					<Height>17.012453907595415</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>130</Y></Direction>
+					<Id>1305111017758</Id>
+					<Name><![CDATA[FactorIntensityOfCapital1 - IncreaseInFactorRequirementsOfCapital2]]></Name>
+					<X>487</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017727" TargetId="1305111017721" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>90</X><Y>-30</Y></Direction>
+					<Id>1305111017759</Id>
+					<Name><![CDATA[<TIME_STEP> - <Input>]]></Name>
+					<X>290</X><Y>1210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788709" TargetId="1258729788686" Polarity="null">
+					<Height>4.463833581484209</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-90</X><Y>-60</Y></Direction>
+					<Id>1305111017760</Id>
+					<Name><![CDATA[SinePeriod0 - Input0]]></Name>
+					<X>350</X><Y>2320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259243872940" TargetId="1258729788715" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>90</X><Y>-40</Y></Direction>
+					<Id>1305111017761</Id>
+					<Name><![CDATA[NoiseStandardDeviation0 - WhiteNoise0]]></Name>
+					<X>540</X><Y>2340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788815" TargetId="1258729788715" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-40</X><Y>-50</Y></Direction>
+					<Id>1305111017762</Id>
+					<Name><![CDATA[WhiteNoise0_random - WhiteNoise0]]></Name>
+					<X>670</X><Y>2350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788654" Polarity="null">
+					<Height>1.216835040847286</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>6</X><Y>70</Y></Direction>
+					<Id>1305111017763</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalAging2]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788671" TargetId="1258729788681" Polarity="null">
+					<Height>13.936586010652292</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>99</X><Y>130</Y></Direction>
+					<Id>1305111017764</Id>
+					<Name><![CDATA[FactorIntensityOfCapital2 - IncreaseInFactorRequirementsOfCapital3]]></Name>
+					<X>677</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788703" TargetId="1258729788685" Polarity="null">
+					<Height>-3.1259108984664863</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>-60</Y></Direction>
+					<Id>1305111017765</Id>
+					<Name><![CDATA[RampStartTime - Input]]></Name>
+					<X>190</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788715" TargetId="1258729788661" Polarity="null">
+					<Height>-33.01826513151967</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>77</X><Y>-100</Y></Direction>
+					<Id>1305111017766</Id>
+					<Name><![CDATA[WhiteNoise0 - ChangeInPinkNoise0]]></Name>
+					<X>630</X><Y>2300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788691" TargetId="1258729788685" Polarity="null">
+					<Height>0.4725085538673284</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>30</X><Y>80</Y></Direction>
+					<Id>1305111017767</Id>
+					<Name><![CDATA[NoiseStartTime - Input]]></Name>
+					<X>260</X><Y>1310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242064471" TargetId="1258729788685" Polarity="null">
+					<Height>1.5556905397313585</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>130</X><Y>-20</Y></Direction>
+					<Id>1305111017768</Id>
+					<Name><![CDATA[RampSlope - Input]]></Name>
+					<X>160</X><Y>1410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017816" TargetId="1258729788650" Polarity="null">
+					<Height>-8.646455448954441</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-150</X><Y>-10</Y></Direction>
+					<Id>1305111017769</Id>
+					<Name><![CDATA[<FactorRequirementsOfCapitalVintage2> - TotalFactorRequirementsOfCapital]]></Name>
+					<X>500</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788708" TargetId="1258729788685" Polarity="null">
+					<Height>-1.2379807918266579</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-100</X><Y>-70</Y></Direction>
+					<Id>1305111017770</Id>
+					<Name><![CDATA[SinePeriod - Input]]></Name>
+					<X>390</X><Y>1460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788659" TargetId="1258729788672" Polarity="null">
+					<Height>-30.632478805756634</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>67</X><Y>150</Y></Direction>
+					<Id>1305111017771</Id>
+					<Name><![CDATA[CapitalVintage3 - FactorIntensityOfCapital3]]></Name>
+					<X>810</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242236786" TargetId="1258729788686" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>20</X><Y>-110</Y></Direction>
+					<Id>1305111017772</Id>
+					<Name><![CDATA[StepHeight0 - Input0]]></Name>
+					<X>240</X><Y>2370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242178732" TargetId="1258729788714" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>-40</Y></Direction>
+					<Id>1305111017773</Id>
+					<Name><![CDATA[NoiseStandardDeviation - WhiteNoise]]></Name>
+					<X>570</X><Y>1470</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788692" TargetId="1258729788686" Polarity="null">
+					<Height>-4.610496259410468</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>30</X><Y>80</Y></Direction>
+					<Id>1305111017774</Id>
+					<Name><![CDATA[NoiseStartTime0 - Input0]]></Name>
+					<X>230</X><Y>2180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017721" TargetId="1258729788664" Polarity="null">
+					<Height>0.6013032292567004</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>150</X><Y>20</Y></Direction>
+					<Id>1305111017775</Id>
+					<Name><![CDATA[<Input> - ExogenousConstructionStartRate]]></Name>
+					<X>380</X><Y>1180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788700" TargetId="1258729788686" Polarity="null">
+					<Height>1.8892101985165937</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>70</X><Y>-90</Y></Direction>
+					<Id>1305111017776</Id>
+					<Name><![CDATA[RampEndTime0 - Input0]]></Name>
+					<X>190</X><Y>2350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788656" TargetId="1258729788652" Polarity="null">
+					<Height>-49.36127533942999</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>100</X><Y>0</Y></Direction>
+					<Id>1305111017777</Id>
+					<Name><![CDATA[CapitalUnderConstruction - CapitalAcquisition]]></Name>
+					<X>297</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242064468" TargetId="1258729788685" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-40</X><Y>90</Y></Direction>
+					<Id>1305111017778</Id>
+					<Name><![CDATA[PulseQuantity - Input]]></Name>
+					<X>330</X><Y>1300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017815" TargetId="1258729788650" Polarity="null">
+					<Height>-7.265928543624284</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-150</X><Y>60</Y></Direction>
+					<Id>1305111017779</Id>
+					<Name><![CDATA[<FactorRequirementsOfCapitalVintage1> - TotalFactorRequirementsOfCapital]]></Name>
+					<X>500</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017726" TargetId="1305111017722" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>80</X><Y>-20</Y></Direction>
+					<Id>1305111017780</Id>
+					<Name><![CDATA[<TIME_STEP> - <Input0>]]></Name>
+					<X>300</X><Y>2060</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788684" TargetId="1258729788665" Polarity="null">
+					<Height>4.872384045599119</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>170</X><Y>-20</Y></Direction>
+					<Id>1305111017781</Id>
+					<Name><![CDATA[InitialLaborRequirementsOfCapital - ExogenousMarginalFactorIntensity]]></Name>
+					<X>370</X><Y>2090</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788649" TargetId="1258729788648" Polarity="null">
+					<Height>-9.489599695294814</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>60</X><Y>60</Y></Direction>
+					<Id>1305111017782</Id>
+					<Name><![CDATA[TotalCapitalStock - AverageFactorIntensityOfCapital]]></Name>
+					<X>220</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242064481" TargetId="1258729788685" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-140</X><Y>40</Y></Direction>
+					<Id>1305111017783</Id>
+					<Name><![CDATA[ExponentialGrowthRate - Input]]></Name>
+					<X>430</X><Y>1350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017724" TargetId="1258729788715" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>90</X><Y>30</Y></Direction>
+					<Id>1305111017784</Id>
+					<Name><![CDATA[<TIME_STEP> - WhiteNoise0]]></Name>
+					<X>540</X><Y>2270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017725" TargetId="1258729788714" Polarity="null">
+					<Height>-11.290816926370965</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>80</X><Y>70</Y></Direction>
+					<Id>1305111017785</Id>
+					<Name><![CDATA[<TIME_STEP> - WhiteNoise]]></Name>
+					<X>590</X><Y>1360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242236783" TargetId="1258729788686" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-126</X><Y>-35</Y></Direction>
+					<Id>1305111017786</Id>
+					<Name><![CDATA[SineAmplitude0 - Input0]]></Name>
+					<X>386</X><Y>2295</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788657" TargetId="1258729788670" Polarity="null">
+					<Height>-32.40025215747288</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>7</X><Y>150</Y></Direction>
+					<Id>1305111017787</Id>
+					<Name><![CDATA[CapitalVintage1 - FactorIntensityOfCapital1]]></Name>
+					<X>480</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788659" TargetId="1258729788655" Polarity="null">
+					<Height>-48.718969549202434</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>145</X><Y>0</Y></Direction>
+					<Id>1305111017788</Id>
+					<Name><![CDATA[CapitalVintage3 - CapitalDiscards]]></Name>
+					<X>810</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788714" TargetId="1258729788660" Polarity="null">
+					<Height>-32.71831424235997</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>77</X><Y>-100</Y></Direction>
+					<Id>1305111017789</Id>
+					<Name><![CDATA[WhiteNoise - ChangeInPinkNoise]]></Name>
+					<X>670</X><Y>1430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788662" TargetId="1258729788652" Polarity="null">
+					<Height>38.538240142265806</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>67</X><Y>70</Y></Direction>
+					<Id>1305111017790</Id>
+					<Name><![CDATA[ConstructionDelay - CapitalAcquisition]]></Name>
+					<X>330</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017722" TargetId="1258729788665" Polarity="null">
+					<Height>6.5038858910371005</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>160</X><Y>30</Y></Direction>
+					<Id>1305111017791</Id>
+					<Name><![CDATA[<Input0> - ExogenousMarginalFactorIntensity]]></Name>
+					<X>380</X><Y>2040</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242236789" TargetId="1258729788686" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-90</X><Y>60</Y></Direction>
+					<Id>1305111017792</Id>
+					<Name><![CDATA[ExponentialGrowthRate0 - Input0]]></Name>
+					<X>350</X><Y>2200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788712" TargetId="1258729788685" Polarity="null">
+					<Height>-3.6705138765675542</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-50</X><Y>-90</Y></Direction>
+					<Id>1305111017793</Id>
+					<Name><![CDATA[StepTime - Input]]></Name>
+					<X>340</X><Y>1480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788674" TargetId="1258729788682" Polarity="null">
+					<Height>4.36387344285572</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-60</X><Y>-100</Y></Direction>
+					<Id>1305111017794</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction - IncreaseInFactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<X>260</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017817" TargetId="1258729788649" Polarity="null">
+					<Height>5.279406126976653</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>130</X><Y>0</Y></Direction>
+					<Id>1305111017795</Id>
+					<Name><![CDATA[<CapitalVintage2> - TotalCapitalStock]]></Name>
+					<X>90</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788663" TargetId="1258729788682" Polarity="null">
+					<Height>18.090791546817513</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017796</Id>
+					<Name><![CDATA[ConstructionStarts - IncreaseInFactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<X>200</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1305111017812" TargetId="1258729788649" Polarity="null">
+					<Height>-0.5716471497235034</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>130</X><Y>60</Y></Direction>
+					<Id>1305111017797</Id>
+					<Name><![CDATA[<CapitalVintage1> - TotalCapitalStock]]></Name>
+					<X>90</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242236780" TargetId="1258729788686" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>137</X><Y>-11</Y></Direction>
+					<Id>1305111017798</Id>
+					<Name><![CDATA[RampSlope0 - Input0]]></Name>
+					<X>123</X><Y>2271</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788655" TargetId="1258729788705" Polarity="null">
+					<Height>13.303437365925333</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017799</Id>
+					<Name><![CDATA[CapitalDiscards - ReductionInFactorRequirementsFromDiscards]]></Name>
+					<X>974</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788687" TargetId="1258729788660" Polarity="null">
+					<Height>-19.629214558373107</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-53</X><Y>-80</Y></Direction>
+					<Id>1305111017800</Id>
+					<Name><![CDATA[NoiseCorrelationTime - ChangeInPinkNoise]]></Name>
+					<X>800</X><Y>1410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788693" TargetId="1258729788660" Polarity="null">
+					<Height>-52.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>97</X><Y>0</Y></Direction>
+					<Id>1305111017801</Id>
+					<Name><![CDATA[PinkNoise - ChangeInPinkNoise]]></Name>
+					<X>650</X><Y>1330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788675" TargetId="1258729788673" Polarity="null">
+					<Height>47.47057960397289</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>-130</Y></Direction>
+					<Id>1305111017802</Id>
+					<Name><![CDATA[FactorRequirementsOfCapitalUnderConstruction - FactorIntensityOfCapitalUnderConstruction]]></Name>
+					<X>297</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788672" TargetId="1258729788705" Polarity="null">
+					<Height>16.114463843859085</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>97</X><Y>130</Y></Direction>
+					<Id>1305111017803</Id>
+					<Name><![CDATA[FactorIntensityOfCapital3 - ReductionInFactorRequirementsFromDiscards]]></Name>
+					<X>877</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1259242236777" TargetId="1258729788686" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-50</X><Y>90</Y></Direction>
+					<Id>1305111017804</Id>
+					<Name><![CDATA[PulseQuantity0 - Input0]]></Name>
+					<X>310</X><Y>2170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788655" Polarity="null">
+					<Height>30.673002312124282</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>204</X><Y>70</Y></Direction>
+					<Id>1305111017805</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalDiscards]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788699" TargetId="1258729788685" Polarity="null">
+					<Height>-1.4138380590800352</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>60</X><Y>-90</Y></Direction>
+					<Id>1305111017806</Id>
+					<Name><![CDATA[RampEndTime - Input]]></Name>
+					<X>230</X><Y>1480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788688" TargetId="1258729788715" Polarity="null">
+					<Height>26.671490255341084</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-130</X><Y>20</Y></Direction>
+					<Id>1305111017807</Id>
+					<Name><![CDATA[NoiseCorrelationTime0 - WhiteNoise0]]></Name>
+					<X>760</X><Y>2280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788810" TargetId="1258729788714" Polarity="null">
+					<Height>10.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-30</X><Y>-50</Y></Direction>
+					<Id>1305111017808</Id>
+					<Name><![CDATA[WhiteNoise_random - WhiteNoise]]></Name>
+					<X>700</X><Y>1480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788698" TargetId="1258729788686" Polarity="null">
+					<Height>-1.0326192334279085</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-100</X><Y>0</Y></Direction>
+					<Id>1305111017809</Id>
+					<Name><![CDATA[PulseTime0 - Input0]]></Name>
+					<X>360</X><Y>2260</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color>-16777216</Color>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788662" TargetId="1258729788656" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-33</X><Y>70</Y></Direction>
+					<Id>1305111017818</Id>
+					<Name><![CDATA[ConstructionDelay - CapitalUnderConstruction]]></Name>
+					<X>330</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788657" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-290</X><Y>70</Y></Direction>
+					<Id>1305111017819</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalVintage1]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788663" TargetId="1258729788657" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>280</X><Y>0</Y></Direction>
+					<Id>1305111017820</Id>
+					<Name><![CDATA[ConstructionStarts - CapitalVintage1]]></Name>
+					<X>200</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788658" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-120</X><Y>70</Y></Direction>
+					<Id>1305111017821</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalVintage2]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788663" TargetId="1305111017817" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-110</X><Y>420</Y></Direction>
+					<Id>1305111017822</Id>
+					<Name><![CDATA[ConstructionStarts - <CapitalVintage2>]]></Name>
+					<X>200</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788651" TargetId="1258729788659" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>40</X><Y>70</Y></Direction>
+					<Id>1305111017823</Id>
+					<Name><![CDATA[AverageLifeOfCapital - CapitalVintage3]]></Name>
+					<X>770</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788663" TargetId="1305111017813" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>-110</X><Y>470</Y></Direction>
+					<Id>1305111017824</Id>
+					<Name><![CDATA[ConstructionStarts - <CapitalVintage3>]]></Name>
+					<X>200</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788656" TargetId="1258729788675" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017825</Id>
+					<Name><![CDATA[CapitalUnderConstruction - FactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<X>297</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788674" TargetId="1258729788675" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>37</X><Y>-100</Y></Direction>
+					<Id>1305111017826</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction - FactorRequirementsOfCapitalUnderConstruction]]></Name>
+					<X>260</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788657" TargetId="1258729788676" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017827</Id>
+					<Name><![CDATA[CapitalVintage1 - FactorRequirementsOfCapitalVintage1]]></Name>
+					<X>480</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788674" TargetId="1258729788676" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>220</X><Y>-100</Y></Direction>
+					<Id>1305111017828</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction - FactorRequirementsOfCapitalVintage1]]></Name>
+					<X>260</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788674" TargetId="1305111017816" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>240</X><Y>50</Y></Direction>
+					<Id>1305111017829</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction - <FactorRequirementsOfCapitalVintage2>]]></Name>
+					<X>260</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788658" TargetId="1258729788677" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017830</Id>
+					<Name><![CDATA[CapitalVintage2 - FactorRequirementsOfCapitalVintage2]]></Name>
+					<X>650</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788659" TargetId="1258729788678" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>280</Y></Direction>
+					<Id>1305111017831</Id>
+					<Name><![CDATA[CapitalVintage3 - FactorRequirementsOfCapitalVintage3]]></Name>
+					<X>810</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1258729788674" TargetId="1305111017814" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>230</X><Y>100</Y></Direction>
+					<Id>1305111017832</Id>
+					<Name><![CDATA[FactorIntensityOfNewConstruction - <FactorRequirementsOfCapitalVintage3>]]></Name>
+					<X>260</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+			</Dependences>
+			<Events>
+				<Event>
+					<Id>1258729788809</Id>
+					<Name><![CDATA[TimeStepEvent]]></Name>
+					<Description><![CDATA[This event occurs on every time step in terms of model]]></Description>
+					<X>20</X><Y>-60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1258729788654</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0.0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[TIME_STEP]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[WhiteNoise_random = uniform();
+WhiteNoise0_random = uniform();
+]]></Action>
+				</Event>
+			</Events>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1490783415296</Id>
+					<Name><![CDATA[navigate]]></Name>
+					<X>-150</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[viewArea]]></Name>
+						<Type><![CDATA[ViewArea]]></Type>
+					</Parameter>
+					<Body><![CDATA[selectedViewArea = viewArea;
+viewArea.navigateTo();
+groupTitleBar.setPos( viewArea.getX(), viewArea.getY() );]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1390208911907</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+
+			<Shapes>
+				<Group>
+					<Id>1322655541026</Id>
+					<Name><![CDATA[groupTitleBar]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<OnDrawCode><![CDATA[if (groupTitleBar.getY()==viewCapitalVintagingAndFactorRequirements.getY())
+	text27.setColor(BLACK);
+else text27.setColor(BLUE);
+if (groupTitleBar.getY()==viewExogeneousInput0.getY())
+	text28.setColor(BLACK);
+else text28.setColor(BLUE);
+if (groupTitleBar.getY()==viewExogeneousInput1.getY())
+	text29.setColor(BLACK);
+else text29.setColor(BLUE);
+if (groupTitleBar.getY()==viewGraphs.getY())
+	text30.setColor(BLACK);
+else text30.setColor(BLUE);]]></OnDrawCode>
+					<Rotation>0.0</Rotation>
+
+			<Shapes>
+				<Rectangle>
+					<Id>1524729376377</Id>
+					<Name><![CDATA[rectangle3]]></Name>
+					<X>530</X><Y>40</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[navigate(viewGraphs);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>60</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1524729325180</Id>
+					<Name><![CDATA[rectangle2]]></Name>
+					<X>403</X><Y>40</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[navigate(viewExogeneousInput1);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>127</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1524729264703</Id>
+					<Name><![CDATA[rectangle1]]></Name>
+					<X>275</X><Y>40</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[navigate(viewExogeneousInput0);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>128</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1524729224184</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>20</X><Y>40</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[navigate(viewCapitalVintagingAndFactorRequirements);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>255</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1322655541030</Id>
+					<Name><![CDATA[text26]]></Name>
+					<X>30</X><Y>10</Y>
+					<Label><X>45</X><Y>13</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-9807155</Color>
+					<Text><![CDATA[Capital Vintaging Coflow]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>22</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Line>
+					<Id>1322655541035</Id>
+					<Name><![CDATA[line6]]></Name>
+					<X>30</X><Y>40</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16711275</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>940</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Text>
+					<Id>1322655541038</Id>
+					<Name><![CDATA[text27]]></Name>
+					<X>30</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16776961</Color>
+					<Text><![CDATA[Capital Vintaging and Factor Requirements]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1322655541041</Id>
+					<Name><![CDATA[text28]]></Name>
+					<X>285</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16776961</Color>
+					<Text><![CDATA[Exogeneous Input 0]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1322655541044</Id>
+					<Name><![CDATA[text29]]></Name>
+					<X>414</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16776961</Color>
+					<Text><![CDATA[Exogeneous Input 1]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1322655541047</Id>
+					<Name><![CDATA[text30]]></Name>
+					<X>540</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16776961</Color>
+					<Text><![CDATA[Graphs]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Line>
+					<Id>1322655541052</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>275</X><Y>65</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-4144960</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>-15</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1322655541055</Id>
+					<Name><![CDATA[line7]]></Name>
+					<X>403</X><Y>65</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-4144960</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>-15</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1322655541060</Id>
+					<Name><![CDATA[line9]]></Name>
+					<X>530</X><Y>65</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-4144960</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>-15</Dy>
+					<Dz>0</Dz>
+				</Line>
+			</Shapes>
+
+				</Group>
+			</Shapes>
+			<Charts>
+    			<TimePlot>
+					<Id>1259240264686</Id>
+					<Name><![CDATA[capitalVintagePerWeeks]]></Name>
+					<X>160</X><Y>2879</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1490860800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[0.1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>680</Width>
+					<Height>271</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>40</XOffset>
+						<YOffset>20</YOffset>
+						<Width>620</Width>
+						<Height>201</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[3000]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Capital Under Construction]]></Title>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[CapitalUnderConstruction]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Capital Vintage 1]]></Title>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-16776961</Color>
+					<Expression2><![CDATA[CapitalVintage1]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Capital Vintage 2 ]]></Title>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-65281</Color>
+					<Expression2><![CDATA[CapitalVintage2]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Capital Vintage 3]]></Title>
+					<Expression><![CDATA[my_dataset3]]></Expression>
+					<Color>-9728477</Color>
+					<Expression2><![CDATA[CapitalVintage3]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>1000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[80]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+    			<TimePlot>
+					<Id>1259240264690</Id>
+					<Name><![CDATA[factorRequirementsPerWeeks]]></Name>
+					<X>150</X><Y>3180</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1490860800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[0.1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>690</Width>
+					<Height>280</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>20</YOffset>
+						<Width>620</Width>
+						<Height>190</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>50</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[100000]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Factor Reqs of Capital Under Construction]]></Title>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[FactorRequirementsOfCapitalUnderConstruction]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Factor Reqs of Capital Vintage 1]]></Title>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-16776961</Color>
+					<Expression2><![CDATA[FactorRequirementsOfCapitalVintage1]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Factor Reqs of Capital Vintage 2]]></Title>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-65281</Color>
+					<Expression2><![CDATA[FactorRequirementsOfCapitalVintage2]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Factor Reqs of Capital Vintage 3]]></Title>
+					<Expression><![CDATA[my_dataset3]]></Expression>
+					<Color>-16744448</Color>
+					<Expression2><![CDATA[FactorRequirementsOfCapitalVintage3]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>1000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[80]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+			</Charts>
+			<Areas>
+				<Area>
+					<Id>1258729788820</Id>
+					<Name><![CDATA[viewCapitalVintagingAndFactorRequirements]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Capital Vintaging and Factor Requirements]]></Title>
+					<Width>1000</Width>
+					<Height>680</Height>
+				</Area>
+				<Area>
+					<Id>1259239958353</Id>
+					<Name><![CDATA[viewExogeneousInput1]]></Name>
+					<X>0</X><Y>1000</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Exogenous Input 1]]></Title>
+					<Width>1000</Width>
+					<Height>680</Height>
+				</Area>
+				<Area>
+					<Id>1259240016631</Id>
+					<Name><![CDATA[viewExogeneousInput0]]></Name>
+					<X>0</X><Y>1900</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Exogeneous Input 0]]></Title>
+					<Width>1000</Width>
+					<Height>680</Height>
+				</Area>
+				<Area>
+					<Id>1259240264692</Id>
+					<Name><![CDATA[viewGraphs]]></Name>
+					<X>0</X><Y>2800</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Graphs]]></Title>
+					<Width>1000</Width>
+					<Height>680</Height>
+				</Area>
+			</Areas>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>	
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.01</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>680</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+			<ExportExcelFilePath><![CDATA[]]></ExportExcelFilePath>
+		</ExportSettings>
+	</Database>
+	
+	<RunConfiguration ActiveObjectClassId="1258729788645">
+		<Id>1490782877369</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1258729788644]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1258735788644]]></FinalDate>	
+			<FinalTime><![CDATA[80.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>false</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>2.0</RealTimeScale>
+			<EnableZoomAndPanning>false</EnableZoomAndPanning>
+			<EnableDeveloperPanel>true</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>
+    		<RunConfigurationInput>
+				<Id>1530272916579</Id>
+				<Name><![CDATA[Pulse quantity]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[PulseQuantity]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916580</Id>
+				<Name><![CDATA[Ramp slope]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[RampSlope]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916581</Id>
+				<Name><![CDATA[Sine amplitude]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[SineAmplitude]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916582</Id>
+				<Name><![CDATA[Step height]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[StepHeight]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916583</Id>
+				<Name><![CDATA[Exp. growth rate]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[ExponentialGrowthRate]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916584</Id>
+				<Name><![CDATA[Noise stand. dev.]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[NoiseStandardDeviation]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916585</Id>
+				<Name><![CDATA[Pulse quantity 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[PulseQuantity0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916586</Id>
+				<Name><![CDATA[Ramp slope 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[RampSlope0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916587</Id>
+				<Name><![CDATA[Sine amplitude 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[SineAmplitude0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916588</Id>
+				<Name><![CDATA[Step height 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[StepHeight0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916589</Id>
+				<Name><![CDATA[Exp. growth rate 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[ExponentialGrowthRate0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1530272916590</Id>
+				<Name><![CDATA[Noise stand. dev. 0]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[NoiseStandardDeviation0]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>		
+		</Inputs>
+		<Outputs>
+    		<RunConfigurationOutput>
+				<Id>0</Id>
+				<Name><![CDATA[Capital vintage per weeks]]></Name>
+				<OutputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[capitalVintagePerWeeks]]></ItemName>
+				</OutputReference>
+    		</RunConfigurationOutput>
+    		<RunConfigurationOutput>
+				<Id>0</Id>
+				<Name><![CDATA[Factor requirements per weeks]]></Name>
+				<OutputReference>
+					<PackageName><![CDATA[capitalv]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[factorRequirementsPerWeeks]]></ItemName>
+				</OutputReference>
+    		</RunConfigurationOutput>
+		</Outputs>
+	</RunConfiguration>
+	<Experiments>	
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1258729788645">
+			<Id>1258729788647</Id>
+			<Name><![CDATA[Simulation]]></Name>
+			<Description><![CDATA[Simulation experiment class. Used to run Main class of the model]]></Description>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>64</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<SnapshotFile></SnapshotFile>
+
+			<Shapes>
+				<Text>
+					<Id>1259241613532</Id>
+					<Name><![CDATA[text13]]></Name>
+					<X>30</X><Y>10</Y>
+					<Label><X>45</X><Y>13</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-9807155</Color>
+					<Text><![CDATA[Capital Vintaging Coflow]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>22</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Line>
+					<Id>1259241613534</Id>
+					<Name><![CDATA[line1]]></Name>
+					<X>30</X><Y>40</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16711275</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>940</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Text>
+					<Id>1259241613536</Id>
+					<Name><![CDATA[text15]]></Name>
+					<X>30</X><Y>180</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Parameters]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Line>
+					<Id>1259241613538</Id>
+					<Name><![CDATA[line2]]></Name>
+					<X>110</X><Y>190</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-8355712</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>DOTTED</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>480</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Text>
+					<Id>1259241654386</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>30</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Noise Standard Deviation:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241654388</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>230</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_NoiseStandardDeviation.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241654390</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>30</X><Y>270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Pulse Quantity:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241654392</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>230</X><Y>290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_PulseQuantity.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241654394</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>30</X><Y>320</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Ramp Slope:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241654396</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>230</X><Y>340</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_RampSlope.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687695</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>30</X><Y>370</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Sine Amplitude:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687697</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>230</X><Y>390</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_SineAmplitude.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687699</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>30</X><Y>420</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Step Height:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687701</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>230</X><Y>440</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_StepHeight.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687703</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>30</X><Y>470</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Exponential Growth Rate:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241687705</Id>
+					<Name><![CDATA[text16]]></Name>
+					<X>230</X><Y>490</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_ExponentialGrowthRate.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716703</Id>
+					<Name><![CDATA[text22]]></Name>
+					<X>340</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Noise Standard Deviation 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716706</Id>
+					<Name><![CDATA[text23]]></Name>
+					<X>540</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_NoiseStandardDeviation0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716708</Id>
+					<Name><![CDATA[text24]]></Name>
+					<X>340</X><Y>270</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Pulse Quantity 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716710</Id>
+					<Name><![CDATA[text25]]></Name>
+					<X>540</X><Y>290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_PulseQuantity0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716712</Id>
+					<Name><![CDATA[text26]]></Name>
+					<X>340</X><Y>320</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Ramp Slope 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241716714</Id>
+					<Name><![CDATA[text27]]></Name>
+					<X>540</X><Y>340</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_RampSlope0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741162</Id>
+					<Name><![CDATA[text14]]></Name>
+					<X>340</X><Y>370</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Sine Amplitude 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741165</Id>
+					<Name><![CDATA[text17]]></Name>
+					<X>540</X><Y>390</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_SineAmplitude0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741167</Id>
+					<Name><![CDATA[text18]]></Name>
+					<X>340</X><Y>420</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Step Height 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741169</Id>
+					<Name><![CDATA[text19]]></Name>
+					<X>540</X><Y>440</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_StepHeight0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741171</Id>
+					<Name><![CDATA[text20]]></Name>
+					<X>340</X><Y>470</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Exponential Growth Rate 0:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1259241741173</Id>
+					<Name><![CDATA[text21]]></Name>
+					<X>540</X><Y>490</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<TextCode><![CDATA[sl_ExponentialGrowthRate0.getValue()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Image>
+					<Id>1322658399019</Id>
+					<Name><![CDATA[image1]]></Name>
+					<X>748</X><Y>70</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<OnClickCode><![CDATA[getExperimentHost().openWebSite("https://www.amazon.com/dp/0071068120/ref=cm_sw_em_r_mt_dp_U_cqFTCb0W3A4ST");]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>222</Width>
+					<Height>280</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageFile><![CDATA[sterman.jpg]]></ImageFile>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Text>
+					<Id>1322658399070</Id>
+					<Name><![CDATA[text29]]></Name>
+					<X>29</X><Y>110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Model of the capital stock for a firm, industry, or economy, disaggregated into an aging chain with
+different capital vintages, and including a coflow to track the factor input requirements embedded
+in each unit of capital. See section 12.2.2.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1322658399076</Id>
+					<Name><![CDATA[text30]]></Name>
+					<X>30</X><Y>70</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Description]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Line>
+					<Id>1322658399078</Id>
+					<Name><![CDATA[line3]]></Name>
+					<X>108</X><Y>80</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-8355712</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>DOTTED</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>450</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Image>
+					<Id>1530273155506</Id>
+					<Name><![CDATA[image2]]></Name>
+					<X>40</X><Y>580</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[getExperimentHost().openWebSite("https://www.anylogic.com");]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>200</Width>
+					<Height>75</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageFile><![CDATA[AnyLogic model logo dark.png]]></ImageFile>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+			</Shapes>
+			<Controls>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241654398</Id>
+					<Name><![CDATA[sl_RampSlope]]></Name>
+					<X>30</X><Y>330</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.34]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241654400</Id>
+					<Name><![CDATA[sl_PulseQuantity]]></Name>
+					<X>30</X><Y>280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.2]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241654404</Id>
+					<Name><![CDATA[sl_NoiseStandardDeviation]]></Name>
+					<X>30</X><Y>230</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.68]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+						<Link>NoiseStandardDeviation</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241687707</Id>
+					<Name><![CDATA[sl_StepHeight]]></Name>
+					<X>30</X><Y>430</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.5]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241687712</Id>
+					<Name><![CDATA[sl_SineAmplitude]]></Name>
+					<X>30</X><Y>380</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.28]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241687716</Id>
+					<Name><![CDATA[sl_ExponentialGrowthRate]]></Name>
+					<X>30</X><Y>480</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.5]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241716718</Id>
+					<Name><![CDATA[sl_RampSlope0]]></Name>
+					<X>340</X><Y>330</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.23]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241716724</Id>
+					<Name><![CDATA[sl_PulseQuantity0]]></Name>
+					<X>340</X><Y>280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.3]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241716727</Id>
+					<Name><![CDATA[sl_NoiseStandardDeviation0]]></Name>
+					<X>340</X><Y>230</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.76]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+						<Link>NoiseStandardDeviation</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241741175</Id>
+					<Name><![CDATA[sl_StepHeight0]]></Name>
+					<X>340</X><Y>430</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.4]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241741177</Id>
+					<Name><![CDATA[sl_SineAmplitude0]]></Name>
+					<X>340</X><Y>380</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.31]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1259241741180</Id>
+					<Name><![CDATA[sl_ExponentialGrowthRate0]]></Name>
+					<X>340</X><Y>480</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="200" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.4]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[2]]></MaxValue>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+			</Controls>
+
+			<Parameters>			
+				<Parameter>
+					<ParameterName><![CDATA[PulseQuantity1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[RampSlope1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[SineAmplitude1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[StepHeight1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ExponentialGrowthRate1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[NoiseStandardDeviation1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[NoiseStandardDeviation0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_NoiseStandardDeviation0.getValue()]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[PulseQuantity]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_PulseQuantity.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[RampSlope]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_RampSlope.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[SineAmplitude]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_SineAmplitude.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[StepHeight]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_StepHeight.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ExponentialGrowthRate]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_ExponentialGrowthRate.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[NoiseStandardDeviation]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_NoiseStandardDeviation.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[PulseQuantity0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_PulseQuantity0.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[RampSlope0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_RampSlope0.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[SineAmplitude0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_SineAmplitude0.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[StepHeight0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_StepHeight0.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ExponentialGrowthRate0]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[sl_ExponentialGrowthRate0.getValue();]]></Code>
+					</ParameterValue>
+				</Parameter>
+			</Parameters>			
+			<PresentationProperties>
+				<EnableZoomAndPanning>false</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Capital Vintaging Coflow : Simulation]]></Title>	
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>2.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1258729788644]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1258735788644]]></FinalDate>	
+				<FinalTime><![CDATA[80.0]]></FinalTime>	
+			</ModelTimeProperties>
+		</SimulationExperiment>	
+	</Experiments>
+	<CloudModelUuid><![CDATA[251fc273-b64d-49bb-8ed7-22db55502e7a]]></CloudModelUuid>
+</Model>
+</AnyLogicWorkspace>

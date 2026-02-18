@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File
+*************************************************
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.qualifier" AlpVersion="8.9.0">
+<Model>
+	<Id>1265292083565</Id>
+	<Name><![CDATA[Optimization in Custom Experiment]]></Name>
+	<Description><![CDATA[This example illustrates how to create custom optimization experiment. The experiment contains constraints and requirements, that add specific restrictions to the found solution. Two versions of the experiment are available: for genetic and OptQuest optimization engines.]]></Description>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[custom_optimization_experiment]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
+	
+	<Folders>
+		
+	</Folders>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1265292083566</Id>
+			<Name><![CDATA[Main]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1440674872004</Id>
+				<Name><![CDATA[1440674872004]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameters:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>false</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1440748800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1440674872017</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1564758648562</CurrentLevel>
+			<ConnectionsId>1440674872016</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1265292101287</Id>
+					<Name><![CDATA[doubleParam]]></Name>
+					<X>50</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1265292101285</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1673362608950</Id>
+					<Name><![CDATA[intParam]]></Name>
+					<X>50</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1673362608948</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1673362696354</Id>
+					<Name><![CDATA[getObjective]]></Name>
+					<X>50</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return doubleParam + intParam;]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1440674872016</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+
+			<Presentation>
+				<Level>
+					<Id>1564758648562</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+
+
+				</Level>
+			</Presentation>
+			<Areas>
+				<Area>
+					<Id>1265292083567</Id>
+					<Name><![CDATA[origin]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Title><![CDATA[Point of origin]]></Title>
+					<Width>1000</Width>
+					<Height>600</Height>
+				</Area>
+			</Areas>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>600</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+
+	<RunConfiguration ActiveObjectClassId="1265292083566">
+		<Id>1519049958539</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1265292083565]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1265292143565]]></FinalDate>	
+			<FinalTime><![CDATA[1.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>false</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>false</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<Experiments>		
+		<!--   =========  Custom Experiment   ========  -->
+		<CustomExperiment>
+			<Id>1622107185651</Id>
+			<Name><![CDATA[CustomOptimizationGenetic]]></Name>
+			<MaximumMemory>64</MaximumMemory>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<Import><![CDATA[import org.uma.jmetal.solution.compositesolution.CompositeSolution;
+import org.uma.jmetal.util.ConstraintHandling;
+import org.uma.jmetal.algorithm.Algorithm;]]></Import>
+			<Code><![CDATA[// Create optimization with root agent as generic parameter
+GeneticOptimization<Main> optimization = new GeneticOptimization<>(Main.class) {
+
+	// Creates engine to perform simulation run (essential)
+	// In parallel mode each simulation requires its' own engine
+	// In serial mode only one engine is required
+	@Override
+	public Engine prepareEngine() {
+		Engine engine = createEngine();
+		// Setup random generator
+		engine.getDefaultRandomGenerator().setSeed( 1 );
+		engine.setStopTime( 1 );
+		return engine;
+	}
+	
+	@Override
+	public void prepareRoot(Main root, CompositeSolution cs) {
+		// Fixed parameters and variables may be configured here
+		// For example: 
+		// root.fixedParameter = 10;
+		// All parameters are set to default values at the moment
+		// Decision variables are configured to correspond CompositeSolution at the moment
+	}
+	
+	// Create variable to monitor optimization status during experiment run
+	private double bestObjective = Double.NaN;
+	// Trace each iteration (optional)
+    @Override
+    public void afterIterationCallback(Main root, CompositeSolution cs) {
+        int currentIteration = GeneticOptimization.getIteration(cs);
+        int intParam = (int) GeneticOptimization.getVariable(cs, "intParam");
+        double doubleParam = (double) GeneticOptimization.getVariable(cs, "doubleParam");
+        double currentObjective = cs.objectives()[0];
+        if (Double.isNaN(bestObjective) || currentObjective < bestObjective ) {
+            // Update best objective
+            bestObjective = currentObjective;
+        }
+        //In case it is required to trace the value of constraint for each iteration:
+        //double constraint = myConstraintFunction(root); 
+        traceln(String.format("  %3d : %11.2f : %8d : %8.2f  -- %8.2f",
+                currentIteration, doubleParam, intParam,
+                currentObjective, bestObjective) );
+    }
+	
+};		
+
+// Add decision variables to optimization. 
+// The names must fully match names of root's parameters
+optimization.addIntegerVariable("intParam", -2, 10);
+optimization.addDoubleVariable("doubleParam", -0.3, 3.14);
+// Enable parallel evaluation
+optimization.enableParallelMode();
+
+// >>> CONSTRAINTS AND REQUIREMENTS
+// Constraints and requirements are considered as feasible if they are non-negative
+// Therefore they should be transcribed into conventional math form:
+//      F(root) >= 0
+// For example, a constraint:
+//      intParam >= 5
+// In a conventioanl form will look:
+//      intParam - 5 >= 0
+optimization.addConstraint(root -> root.intParam - 5);
+//the same: optimization.addConstraint(root -> myConstraintFunction(root));
+optimization.addRequirement(r -> r.doubleParam - 1.11);
+// <<< END OF CONSTRAINTS AND REQUIREMENTS
+
+// Target of genetic optimization is minimization of objective function. 
+// If you want to find a maximum of objective function, it is enough to multiply
+// the objective function by -1. For example: -root.getObjective()
+optimization.setObjectiveEvaluator(root -> root.getObjective());
+
+
+traceln(" Iter : doubleParam : intParam : Objective -- Best obj.");
+traceln("-------------------------------------------");
+// Perform optimization
+optimization.run(500 /* Number of evaluations */);
+CompositeSolution bestSolution = optimization.getResult();
+traceln("-------------------------------------------");
+
+// Output results
+if (bestSolution != null) {
+	traceln( "Best objective: " + format(bestSolution.objectives()[0]) );
+	traceln( "   is feasible: " + ConstraintHandling.isFeasible(bestSolution) );
+	traceln( "Best double parameter: " + GeneticOptimization.getVariable(bestSolution, "doubleParam") );
+	traceln( "Best int parameter: " + GeneticOptimization.getVariable(bestSolution, "intParam") );
+}
+]]></Code>
+			<AdditionalClassCode><![CDATA[// if need to trace constraint values + uncomment in Experiment code
+//double myConstraintFunction(Main root) {
+//	return root.intParam - 5;
+//}]]></AdditionalClassCode>
+		</CustomExperiment>
+		<!--   =========  Custom Experiment   ========  -->
+		<CustomExperiment>
+			<Id>1673276050039</Id>
+			<Name><![CDATA[CustomOptimizationOptQuest]]></Name>
+			<MaximumMemory>64</MaximumMemory>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<Import><![CDATA[import com.opttek.optquest.*;]]></Import>
+			<Code><![CDATA[try {
+	// Create Engine, initialize random number generator:
+	Engine engine = createEngine();
+	// Set stop time:
+	engine.setStopTime( 1 );
+
+	// Create optimization variables:
+	final COptQuestContinuousVariable doubleV = new COptQuestContinuousVariable();
+	doubleV.SetLowerBound(-0.3);
+	doubleV.SetUpperBound(3.14);
+	
+	final COptQuestIntegerVariable intV = new COptQuestIntegerVariable();
+	intV.SetLowerBound(-2);
+	intV.SetUpperBound(10);
+	
+	// Create objective
+	final COptQuestObjective obj = new COptQuestUserControlledObjective();
+	obj.SetMinimize();
+	
+	// Create optimization engine
+	final COptQuestOptimization opt = ExperimentOptimization.createOptimization(engine, new OptimizationCallback() {
+
+		@Override
+		public void evaluate(COptQuestOptimization optimization,
+				COptQuestSolution solution, Engine engine) {
+			// Create new root object:
+			Main root = new Main( engine, null, null );
+			// Setup parameters of root object here
+			root.doubleParam = solution.GetVariableValue(doubleV);
+			root.intParam = (int) solution.GetVariableValue(intV);
+			// Prepare Engine for simulation:
+			root.getDefaultRandomGenerator().setSeed(1);
+			engine.start( root );
+			// Start simulation in fast mode:
+			engine.runFast();
+			// Process results of simulation here
+			solution.SetObjectiveValue( obj, root.getObjective() );
+			// Destroy the model:
+			engine.stop();
+		}
+		
+		// Trace each iteration (optional!)
+		@Override
+		public void monitorStatus(COptQuestOptimization optimization,
+				COptQuestSolution solution, Engine engine) {
+			try {
+				traceln(String.format("  %3d : %11.2f : %8.2f : %8.2f  -- %8.2f",
+					solution.GetIteration(), solution.GetVariableValue(doubleV),
+					solution.GetVariableValue(intV), solution.GetObjectiveValue(),
+					optimization.GetBestSolution() != null ?
+					optimization.GetBestSolution().GetObjectiveValue(obj) : Double.NaN));
+			} catch (COptQuestException e) {
+				traceln(e.Description());
+			}
+		}
+		
+	});
+
+	// Setup optimization engine
+	opt.AddVariable(doubleV);
+	opt.AddVariable(intV);
+	opt.AddObjective(obj);
+	// Set the number of iterations to run
+	opt.SetMaximumIterations(500);
+	
+	// Add suggested solution (initial solution)
+	COptQuestSolution suggestedSolution = opt.CreateSolution();
+	suggestedSolution.SetVariableValue(doubleV, 50.0);
+	suggestedSolution.SetVariableValue(intV, 50.0);
+	opt.AddSuggestedSolution(suggestedSolution);
+	
+	traceln(" Iter : doubleParam : intParam : Objective -- Best obj.");
+	traceln("-------------------------------------------");
+	// Perform optimization
+	opt.Optimize();
+	traceln("-------------------------------------------");
+	
+	// Output results
+	COptQuestSolution bestSolution = opt.GetBestSolution();
+	traceln("Best objective: " + format(bestSolution.GetObjectiveValue(obj)));
+	traceln("   is feasible: " + format(bestSolution.IsFeasible()));
+	traceln("Best double parameter: " + format(bestSolution.GetVariableValue(doubleV)));
+	traceln("Best int parameter: " + format(bestSolution.GetVariableValue(intV)));
+	traceln("Best iteration: " + bestSolution.GetIteration());
+} catch (COptQuestException e) {
+	traceln(e.Description());
+}]]></Code>
+		</CustomExperiment>
+	</Experiments>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1673276330564</Id>
+			<Name><![CDATA[GeneticOptimization]]></Name>
+			<Text><![CDATA[import org.uma.jmetal.algorithm.Algorithm;
+import org.uma.jmetal.algorithm.multiobjective.nsgaii.NSGAII;
+import org.uma.jmetal.operator.crossover.CrossoverOperator;
+import org.uma.jmetal.operator.crossover.impl.*;
+import org.uma.jmetal.operator.mutation.MutationOperator;
+import org.uma.jmetal.operator.mutation.impl.*;
+import org.uma.jmetal.operator.selection.impl.BinaryTournamentSelection;
+import org.uma.jmetal.problem.Problem;
+import org.uma.jmetal.solution.Solution;
+import org.uma.jmetal.solution.binarysolution.BinarySolution;
+import org.uma.jmetal.solution.binarysolution.impl.DefaultBinarySolution;
+import org.uma.jmetal.solution.compositesolution.CompositeSolution;
+import org.uma.jmetal.solution.doublesolution.DoubleSolution;
+import org.uma.jmetal.solution.doublesolution.impl.DefaultDoubleSolution;
+import org.uma.jmetal.solution.integersolution.IntegerSolution;
+import org.uma.jmetal.solution.integersolution.impl.DefaultIntegerSolution;
+import org.uma.jmetal.util.ConstraintHandling;
+import org.uma.jmetal.util.binarySet.BinarySet;
+import org.uma.jmetal.util.bounds.Bounds;
+import org.uma.jmetal.util.comparator.DominanceComparator;
+import org.uma.jmetal.util.comparator.RankingAndCrowdingDistanceComparator;
+import org.uma.jmetal.util.evaluator.impl.SequentialSolutionListEvaluator;
+import org.uma.jmetal.util.pseudorandom.JMetalRandom;
+import org.uma.jmetal.util.evaluator.SolutionListEvaluator;
+
+import java.util.function.Function;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/** The genetic optimization is based on JMetal (an open source metaheuristic optimization framework)
+ * You may visit https://jmetal.readthedocs.io/ for detailed documentation
+ * or https://javadoc.io/doc/org.uma.jmetal/jmetal-core/latest/index.html - for JavaDoc
+ */
+public class GeneticOptimization<R extends Agent> implements Problem<CompositeSolution>  {
+	final static String VARIABLES_ORDER_ATTRIBUTE = "Variables";
+	final static String ITERATION_ATTRIBUTE = "Iteration";
+	
+	// Integer decision variables
+	private List<Bounds<Integer>> intBounds = new ArrayList<>();
+	private LinkedList<String> intVariables = new LinkedList<>();
+	
+	// Double decision variables
+	private List<Bounds<Double>> doubleBounds = new ArrayList<>();
+	private LinkedList<String> doubleVariables = new LinkedList<>();
+	
+	// Bolean decision variables
+	private LinkedList<String> booleanVariables = new LinkedList<>();
+	
+	private Function<R, Double> objectiveEvaluator;
+	
+	// Engine instance used for serial optimization and to crate  dummy 
+	// root for validation of decision variables
+	private Engine serialEngine;
+	
+	// An instance of root Agent's class
+	private Class<R> rootClass;
+	
+	private boolean parallelMode = false;
+	private AtomicInteger iterationCounter = new AtomicInteger(0);
+	
+	// Algorithm
+	private Algorithm<List<CompositeSolution>> algorithm;
+	
+	public GeneticOptimization(Class<R> rootClass) {
+		this.rootClass = rootClass;
+	}
+
+	
+	public void enableParallelMode() {
+		if (algorithm != null) {
+			throw new RuntimeException("Parallel mode may be enabled only before optimization has been started");
+		}
+		this.parallelMode = true;
+	}
+	
+	@Override
+	public CompositeSolution createSolution() {
+		IntegerSolution integerSolution = new DefaultIntegerSolution(getNumberOfObjectives(), getNumberOfConstraints(), intBounds);
+		integerSolution.attributes().put(VARIABLES_ORDER_ATTRIBUTE, intVariables);
+		
+	    DoubleSolution doubleSolution = new DefaultDoubleSolution(getNumberOfObjectives(), getNumberOfConstraints(), doubleBounds);
+	    doubleSolution.attributes().put(VARIABLES_ORDER_ATTRIBUTE, doubleVariables);
+	    
+	    DefaultBinarySolution binarySolution = new DefaultBinarySolution(Arrays.asList(booleanVariables.size()), getNumberOfObjectives(), getNumberOfConstraints());
+	    binarySolution.attributes().put(VARIABLES_ORDER_ATTRIBUTE, booleanVariables);
+	    return new CompositeSolution(Arrays.asList(integerSolution, doubleSolution));
+	}
+	
+	public void addIntegerVariable(String name, int lowerBound, int upperBound) {
+		ensureRootHasParameter(name);
+		if (intVariables.contains(name)) {
+			throw new RuntimeException(String.format("The variable '%s' was already part of optimization", name));
+		}
+		intVariables.add(name);
+		intBounds.add(Bounds.create(lowerBound, upperBound));
+	}
+	
+	public void addDoubleVariable(String name, double lowerBound, double upperBound) {
+		ensureRootHasParameter(name);
+		if (doubleVariables.contains(name)) {
+			throw new RuntimeException(String.format("The variable '%s' was already part of optimization", name));
+		}
+		doubleVariables.add(name);
+		doubleBounds.add(Bounds.create(lowerBound, upperBound));
+	}
+	
+	public void addBooleanVariable(String name) {
+		ensureRootHasParameter(name);
+		if (booleanVariables.contains(name)) {
+			throw new RuntimeException(String.format("The variable '%s' was already part of optimization", name));
+		}
+		booleanVariables.add(name);
+	}
+	
+	public void addConstraint(Function<R, Number> constraint) {
+		//constraint is feasible if it is non-negative
+		constraints.add(constraint);
+	}
+	
+	public void addRequirement(Function<R, Number> requirement) {
+		//requirement is feasible if it is non-negative
+		requirements.add(requirement);
+	}
+	
+	private R dummyRootForValidation;
+	private void ensureRootHasParameter(String name) {
+		if (dummyRootForValidation == null) {
+			if (serialEngine == null) {
+				serialEngine = prepareEngine();
+			}
+			dummyRootForValidation = createRoot(serialEngine, rootClass);
+		}
+		boolean noSuchParameter = Arrays.stream(dummyRootForValidation.getParameterNames())
+			.filter(s -> s.equals(name))
+			.findAny()
+			.isEmpty();
+		if (noSuchParameter) {
+			throw new RuntimeException(String.format(
+					"The root agent has no parameter with such name '%s'. Please verify parameter name.", name) );
+		}
+	}
+	
+	@Override
+	public CompositeSolution evaluate(CompositeSolution cs) {
+		Engine engine;
+		if (parallelMode) {
+			engine = prepareEngine();
+		} else {
+			if (serialEngine == null) {
+				serialEngine = prepareEngine();
+			}
+			engine = serialEngine;
+		}
+		
+		R root = createRoot(engine, rootClass);
+		root.setParametersToDefaultValues();
+		setupVariables(root, cs);
+		cs.attributes().put(ITERATION_ATTRIBUTE, -1);
+		prepareRoot(root, cs);
+		if (!processConstraints(root, cs)) {
+			cs.objectives()[0] = infinity;
+			return cs;
+		}
+		cs.attributes().put(ITERATION_ATTRIBUTE, iterationCounter.incrementAndGet());
+		engine.start(root);
+		engine.runFast();
+		double objective = objectiveEvaluator.apply(root);
+		cs.objectives()[0] = objective;
+		afterIterationCallback(root, cs);
+		processRequirements(root, cs);
+		// Destroy the model
+		engine.stop();
+		return cs;
+	}
+	
+	public void prepareRoot(R root, CompositeSolution cs) {
+		// The method is optional and should be overriden by user
+	}
+	
+	private R createRoot(Engine engine, Class<R> clazz) {
+		try {
+			return clazz.getDeclaredConstructor(Engine.class, Agent.class, AgentList.class).newInstance(engine, null, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public Engine prepareEngine() {
+		throw new RuntimeException("Method prepareEngine() should be overriden");
+		
+	}
+	
+	private List<Function<R, Number>> constraints = new ArrayList<>();
+	private boolean processConstraints(R root, CompositeSolution cs) {
+		int i = 0;
+		for (Function<R, Number> f : constraints) {
+			cs.constraints()[i++] = f.apply(root).doubleValue();
+		}
+		return ConstraintHandling.isFeasible(cs);
+	}
+	
+	private List<Function<R, Number>> requirements = new ArrayList<>();
+	private void processRequirements(R root, CompositeSolution cs) {
+		int i = constraints.size();
+		for (Function<R, Number> f : requirements) {
+			cs.constraints()[i++] = f.apply(root).doubleValue();
+		}
+	}
+	
+	public void afterIterationCallback(R root, CompositeSolution cs) {
+		// The method is optional and should be overriden by user
+	}
+	
+	private void setupVariables(R root, CompositeSolution cs) {
+		for (Solution<?> s: cs.variables()) {
+			LinkedList<String> params = (LinkedList<String>) s.attributes().get(VARIABLES_ORDER_ATTRIBUTE);
+			for (int i = 0; i < params.size(); i++) {
+				String paramName = params.get(i);
+				Object paramValue;
+				if (s instanceof BinarySolution) {
+					BinarySet bs = (BinarySet) s.variables().get(0);
+					paramValue = bs.get(i);
+				} else {
+					paramValue = s.variables().get(i);
+				}
+				root.setParameter(paramName, paramValue, false);
+			}
+		}
+	}
+	
+	public void setObjectiveEvaluator(Function<R, Double> objectiveEvaluator) {
+		this.objectiveEvaluator = objectiveEvaluator;
+	}
+	
+	public static Object getVariable(CompositeSolution cs, String varName) {
+		for (Solution s: cs.variables()) {
+			LinkedList<String> variables = (LinkedList<String>) (s.attributes().get(VARIABLES_ORDER_ATTRIBUTE));
+			int index = variables.indexOf(varName);
+			if (index != -1) {
+				if (s instanceof BinarySolution) {
+					BinarySet bs = (BinarySet) s.variables().get(0);
+					return bs.get(index);
+				} else {
+					return s.variables().get(index);
+				}
+			}
+		}
+		throw new RuntimeException(String.format(
+				"Variable with name '%s' is not a part of optimization. Ensure such variable was added via addVariable API"
+				, varName) );			
+	}
+	
+	public static int getIteration(CompositeSolution cs) {
+		return (int) cs.attributes().get(ITERATION_ATTRIBUTE);
+	}
+	
+	private CompositeCrossover prepareCrossover() {
+		CrossoverOperator<IntegerSolution> intCrossover = new IntegerSBXCrossover(1.0, 20.0);
+		CrossoverOperator<DoubleSolution> doubleCrossover = new SBXCrossover(1.0, 20.0);
+		CrossoverOperator<BinarySolution> booleanCrossover = new HUXCrossover(1.0);
+		CompositeCrossover crossover = new CompositeCrossover(
+				Arrays.asList(
+						intCrossover, 
+						doubleCrossover, 
+						booleanCrossover)
+				);
+		return crossover;
+	}
+	
+	private CompositeMutation prepareMutator() {
+		int nDiscr = intVariables.isEmpty() ? 1 : intVariables.size();
+		MutationOperator<IntegerSolution> intMutator = new IntegerPolynomialMutation(1.0 / nDiscr, 20.0);
+		int nCont = doubleVariables.isEmpty() ? 1 : doubleVariables.size();
+		MutationOperator<DoubleSolution> doubleMutator = new PolynomialMutation(1.0 / nCont, 20.0);
+		int nBool = booleanVariables.isEmpty() ? 1 : booleanVariables.size();
+		MutationOperator<BinarySolution> booleanMutator = new BitFlipMutation(1.0 / nBool);
+		CompositeMutation mutator = new CompositeMutation(Arrays.asList(intMutator, doubleMutator, booleanMutator));
+		return mutator;
+	}
+	
+	private Algorithm<List<CompositeSolution>> createAlgorithm(int numberOfEvaluations) {
+		if (numberOfEvaluations < 2) {
+			throw new RuntimeException("");
+		}
+		BinaryTournamentSelection<CompositeSolution> selectionOperator = 
+				new BinaryTournamentSelection<>(new RankingAndCrowdingDistanceComparator<CompositeSolution>());
+		DominanceComparator<CompositeSolution> dominanceComparator = new DominanceComparator<>();
+		int populationSize = Math.min(10, numberOfEvaluations);
+		final int matingPoolSize = populationSize;
+		final int offspringPopulationSize = populationSize;
+		CrossoverOperator<CompositeSolution> crossover = prepareCrossover();
+		MutationOperator<CompositeSolution> mutator = prepareMutator();
+		SolutionListEvaluator evaluator = parallelMode ? new ParallelModelEvaluator() :
+													new SequentialSolutionListEvaluator();
+		Algorithm<List<CompositeSolution>> algorithm = new NSGAII<CompositeSolution>(this, 
+				numberOfEvaluations, populationSize, matingPoolSize, offspringPopulationSize,
+				crossover, mutator, selectionOperator, dominanceComparator, evaluator) {
+			public void run() {
+				super.run();
+				evaluator.shutdown();
+			}
+			public boolean isStoppingConditionReached() {
+				return numberOfEvaluations <= iterationCounter.get();
+			}
+		};
+		
+		return algorithm;
+	}
+	
+	public void run(int numberOfEvaluations) {
+		// If optimization reproducability is needed, JMetal seed should be configured. For example: 
+		JMetalRandom.getInstance().setSeed(-6628324415405697051L /* Any big number */);
+		if (getNumberOfVariables() == 0) {
+			throw new RuntimeException("No decision variables were added. Use add...Variable() methods to configure set of decision variables");
+		}
+		if (objectiveEvaluator == null) {
+			throw new RuntimeException("No objective evaluator was added. Use setObjectiveEvaluator() methods to specify objective function evaluation code");
+		}
+		algorithm = createAlgorithm(numberOfEvaluations);
+		algorithm.run();
+	}
+	
+	public CompositeSolution getResult() {
+		if (algorithm == null 
+				|| algorithm.getResult() == null 
+				|| algorithm.getResult().isEmpty() ) {
+			return null;
+		}
+		return algorithm.getResult().get(0);
+	}
+	
+	@Override
+	public int getNumberOfObjectives() {
+		return 1;
+	}
+	
+	@Override
+	public int getNumberOfVariables() {
+		return intVariables.size() + doubleVariables.size() + booleanVariables.size();
+	}
+	
+	@Override
+	public int getNumberOfConstraints() {
+		return constraints.size() + requirements.size();
+	}
+	
+	@Override
+	public String getName() {
+		return "Genetic optimization";
+	}
+	
+	private static class ParallelModelEvaluator implements SolutionListEvaluator<CompositeSolution> {
+		private ExecutorService pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		private Collection<Callable<CompositeSolution>> tasks = new ArrayList<>();
+		@Override
+		public List<CompositeSolution> evaluate(List<CompositeSolution> solutionList,
+				Problem<CompositeSolution> problem) {
+			tasks.clear();
+			for (CompositeSolution s: solutionList) {
+				tasks.add(() -> problem.evaluate(s));
+			}
+			try {
+				// Invoke simulations
+				List<Future<CompositeSolution>> results = pool.invokeAll(tasks);
+				// Wait till all tasks completed
+			} catch (Exception e) {
+				 e.printStackTrace();
+			}
+			return solutionList;
+		}
+		
+		@Override
+		public void shutdown() {
+			pool.shutdown();
+		}
+	}
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>

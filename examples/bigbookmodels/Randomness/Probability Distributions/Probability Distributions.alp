@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File 
+*************************************************	         
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.0.qualifier" AlpVersion="8.7.5">
+<Model>
+	<Id>1269269689825</Id>
+	<Name><![CDATA[Probability Distributions]]></Name>
+	<Description><![CDATA[Using this application you can explore different probability distributions. You can also upload your own dataset and compare it with a distribution.]]></Description>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[probability_distributions]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1269269689826</Id>
+			<Name><![CDATA[Main]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<StartupCode><![CDATA[descriptors.add( new Descriptor( "double uniform()", new String[] {}, new String[] {}, new String[] {}, new String[] {} ) );
+descriptors.add( new Descriptor( "double uniform_pos()", new String[] {}, new String[] {}, new String[] {}, new String[] {} ) );
+descriptors.add( new Descriptor( "double uniform( double max )", new String[] { "max" }, new String[] { "double" }, new String[] { "10" }, new String[] { "The maximum value (minimum is 0)" } ) );
+descriptors.add( new Descriptor( "double uniform( double min, double max )", new String[] { "min", "max" }, new String[] { "double", "double" }, new String[] { "5", "10" }, new String[] { "The miniimum value", "The maximum value" } ) );
+descriptors.add( new Descriptor( "int uniform_discr( int max )", new String[] { "max" }, new String[] { "int" }, new String[] { "5" }, new String[] { "The maximum value (inclusive)" } ) );
+descriptors.add( new Descriptor( "int uniform_discr( int min, int max )", new String[] { "min", "max" }, new String[] { "int", "int" }, new String[] { "2", "5" }, new String[] { "The minimum value (inclusive)", "The maximum value (inclusive)" } ) );
+descriptors.add( new Descriptor( "boolean randomTrue( double p )", new String[] { "p" }, new String[] { "double" }, new String[] { "0.3" }, new String[] { "The probability of 'true' [0..1]" } ) );
+descriptors.add( new Descriptor( "boolean randomFalse( double p )", new String[] { "p" }, new String[] { "double" }, new String[] { "0.3" }, new String[] { "The probability of 'false' [0..1]" } ) );
+descriptors.add( new Descriptor( "int bernoulli( double p )", new String[] { "p" }, new String[] { "double" }, new String[] { "0.7" }, new String[] { "The probability of 1 [0..1]" } ) );
+descriptors.add( new Descriptor( "double beta( double p, double q )", new String[] { "p", "q" }, new String[] { "double", "double" }, new String[] { "2", "4" }, new String[] { "The lower shape parameter > 0 (also known as 'alpha' parameter)", "The upper shape parameter > 0 (also known as 'beta' parameter)" } ) );
+descriptors.add( new Descriptor( "double beta( double p, double q, double min, double max )", new String[] { "p", "q", "min", "max" }, new String[] { "double", "double", "double", "double" }, new String[] { "2", "4", "5", "10" }, new String[] { "The lower shape parameter > 0 (also known as 'alpha' parameter)", "The upper shape parameter > 0 (also known as 'beta' parameter)", "The minimum value", "The maximum value" } ) );
+descriptors.add( new Descriptor( "double beta( double min, double max, double p, double q, double shift, double stretch )", new String[] { "min", "max", "p", "q", "shift", "stretch" }, new String[] { "double", "double", "double", "double", "double", "double" }, new String[] { "5", "10", "2", "4", "7", "1" }, new String[] { "The minimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The lower shape parameter > 0 (also known as 'alpha' parameter)", "The upper shape parameter > 0 (also known as 'beta' parameter)", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "int binomial( double p )", new String[] { "p" }, new String[] { "double" }, new String[] { "0.3" }, new String[] { "The probability of event occurrece" } ) );
+descriptors.add( new Descriptor( "int binomial( double p, int n )", new String[] { "p", "n" }, new String[]{ "double", "int" }, new String[] { "0.3", "10" }, new String[] { "The probability of event occurrece", "The number of trials" } ) );
+descriptors.add( new Descriptor( "double binomial( double min, double max, double p, double n, double shift, double stretch )", new String[] { "min", "max", "p", "n", "shift", "stretch" }, new String[] { "double", "double", "double", "double", "double", "double" }, new String[] { "0", "10", "0.3", "10", "5", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The probability of event occurrece", "The number of trials", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "double cauchy( double lambda )", new String[] { "lambda" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The scaling parameter > 0" } ) );
+descriptors.add( new Descriptor( "double cauchy( double lambda, double theta )", new String[] { "lambda", "theta" }, new String[] { "double", "double" }, new String[] { "1", "10000" }, new String[] { "The scaling parameter > 0", "The mode, or central peak position" } ) );
+descriptors.add( new Descriptor( "double chi2( double nu )", new String[] { "nu" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The shape parameter" } ) );
+descriptors.add( new Descriptor( "double chi2( double nu, double min )", new String[] { "nu", "min" }, new String[] { "double", "double" }, new String[] { "1", "0.5" }, new String[] { "The shape parameter", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double erlang( double beta, int m )", new String[] { "beta", "m" }, new String[]{ "double", "int" }, new String[] { "1", "5" }, new String[] { "The scale factor > 0", "The shape factor > 0" } ) );
+descriptors.add( new Descriptor( "double erlang( double beta, int m, double min )", new String[] { "beta", "m", "min" }, new String[] { "double", "int", "double" }, new String[] { "1", "5", "2" }, new String[] { "The scale factor > 0", "The shape factor > 0", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double exponential()", new String[] {}, new String[] {}, new String[] {}, new String[] {} ) );
+descriptors.add( new Descriptor( "double exponential( double lambda )", new String[] { "lambda" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The shape parameter" } ) );
+descriptors.add( new Descriptor( "double exponential( double lambda, double min )", new String[] { "lambda", "min" }, new String[] { "double", "double" }, new String[] { "1", "1" }, new String[] { "The shape parameter", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double exponential( double min, double max, double shift, double stretch )", new String[] { "min", "max", "shift", "stretch" }, new String[] { "double", "double", "double", "double" }, new String[] { "6", "8", "5", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "double gamma( double alpha, double beta )", new String[] { "alpha", "beta" }, new String[] { "double", "double" }, new String[] { "2", "1" }, new String[] { "The shape parameter > 0. Also known as order", "The scale parameter > 0" } ) );
+descriptors.add( new Descriptor( "double gamma( double alpha, double beta, double min )", new String[] { "alpha", "beta", "min" }, new String[] { "double", "double", "double" }, new String[] { "2", "1", "1" }, new String[] { "The shape parameter > 0. Also known as order", "The scale parameter > 0", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double gamma( double min, double max, double alpha, double shift, double stretch )", new String[] { "min", "max", "alpha", "shift", "stretch" }, new String[] { "double", "double", "double", "double", "double" }, new String[] { "5.5", "10", "2", "5", "1" }, new String[] { "The minimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The shape parameter > 0 (if < 1 1 is used). Also known as order", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "int geometric( double p )", new String[] { "p" }, new String[] { "double" }, new String[] { "0.5" }, new String[] { "The probability of occurrence" } ) );
+descriptors.add( new Descriptor( "int hypergeometric( int ss, int dn, int ps )", new String[] { "ss", "dn", "ps" }, new String[]{ "int", "int", "int" }, new String[] { "20", "10", "100" }, new String[] { "The sample size", "The number of defects in the population", "The size of the population" } ) );
+descriptors.add( new Descriptor( "double gumbel1( double a, double b )", new String[] { "a", "b" }, new String[] { "double", "double" }, new String[] { "1", "5" }, new String[] { "", "" } ) );
+descriptors.add( new Descriptor( "double gumbel2( double a, double b )", new String[] { "a", "b" }, new String[] { "double", "double" }, new String[] { "5", "1" }, new String[] { "", "" } ) );
+descriptors.add( new Descriptor( "double laplace( double phi, double theta )", new String[] { "phi", "theta" }, new String[] { "double", "double" }, new String[] { "1", "0" }, new String[] { "The scaling parameter", "The mode, or central peak position" } ) );
+descriptors.add( new Descriptor( "int logarithmic( double theta )", new String[] { "theta" }, new String[] { "double" }, new String[] { "0.5" }, new String[] { "The shape/scale parameter [0..1]" } ) );
+descriptors.add( new Descriptor( "double logistic( double beta, double alpha )", new String[] { "beta", "alpha" }, new String[] { "double", "double" }, new String[] { "1", "10" }, new String[] { "The scale parameter > 0", "The shift parameter" } ) );
+descriptors.add( new Descriptor( "double lognormal( double mu, double sigma, double min )", new String[] { "mu", "sigma", "min" }, new String[] { "double", "double", "double" }, new String[] { "5", "0.5", "3" }, new String[] { "The mean of the included Normal", "The standard deviation of the included Normal", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double negativeBinomial( double p, double n )", new String[] { "p", "n" }, new String[] { "double", "double" }, new String[] { "0.8", "10" }, new String[] { "The probability of event (in the interval [0..1]", "The number of desired events" } ) );
+descriptors.add( new Descriptor( "double negativeBinomial( double min, double max, double p, double n, double shift, double stretch )",new String[] { "min", "max", "p", "n", "shift", "stretch"  }, new String[]{ "double", "double", "double", "double", "double", "double" }, new String[] { "1", "6", "0.8", "10", "0", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The probability of event (in the interval [0..1]", "The number of desired events", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "double normal()", new String[] {}, new String[] {}, new String[] {}, new String[] {} ) );
+descriptors.add( new Descriptor( "double normal( double sigma )", new String[] { "sigma" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The shape parameter = standard deviation" } ) );
+descriptors.add( new Descriptor( "double normal( double sigma, double mean )", new String[] { "sigma", "mean" }, new String[] { "double", "double" }, new String[] { "1", "10" }, new String[] { "The shape parameter = standard deviation", "The shift parameter = mean value" } ) );
+descriptors.add( new Descriptor( "double normal( double min, double max, double shift, double stretch )", new String[] { "min", "max", "shift", "stretch" }, new String[] { "double", "double", "double", "double" }, new String[] { "8", "11", "10", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "double pareto( double alpha )", new String[] { "alpha" }, new String[] { "double" }, new String[] { "3" }, new String[] { "The scale parameter > 0" } ) );
+descriptors.add( new Descriptor( "double pareto( double alpha, double min )", new String[] { "alpha", "min" }, new String[] { "double", "double" }, new String[] { "3", "1" }, new String[] { "The scale parameter > 0", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "int poisson( double lambda )", new String[] { "lambda" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The rate of event occurrence" } ) );
+descriptors.add( new Descriptor( "double poisson( double min, double max, double mean, double shift, double stretch )", new String[] { "min", "max", "mean", "shift", "stretch" }, new String[] { "double", "double", "double", "double", "double" }, new String[] { "10", "100", "15", "0", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The mean value for the distribution = rate of event occurrence", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+descriptors.add( new Descriptor( "double rayleigh( double sigma )", new String[] { "sigma" }, new String[] { "double" }, new String[] { "1" }, new String[] { "The scale parameter > 0" } ) );
+descriptors.add( new Descriptor( "double rayleigh( double sigma, double min )", new String[] { "sigma", "min" }, new String[] { "double", "double" }, new String[] { "1", "5" }, new String[] { "The scale parameter > 0", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double triangular( double min, double max )", new String[] { "min", "max" }, new String[] { "double", "double" }, new String[] { "5", "25" }, new String[] { "The miniimum value", "The maximum value" } ) );
+descriptors.add( new Descriptor( "double triangular( double min, double max, double mode )", new String[] { "min", "max", "mode" }, new String[] { "double", "double", "double" }, new String[] { "5", "25", "10" }, new String[] { "The miniimum value", "The maximum value", "The most likely value" } ) );
+descriptors.add( new Descriptor( "double triangular( double min, double max, double left, double mode, double right )", new String[] { "min", "max", "left", "mode", "right" }, new String[] { "double", "double", "double", "double", "double" }, new String[] { "7", "20", "5", "10", "25" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The minimum x value for the untruncated triangular distribution", "The most likely value for the untruncated triangular distribution", "The maximum x value for the untruncated triangular distribution" } ) );
+descriptors.add( new Descriptor( "double pert( double min, double max, double mode )", new String[] { "min", "max", "mode" }, new String[] { "double", "double", "double" }, new String[] { "10", "100", "20" }, new String[] { "The miniimum value", "The maximum value", "The most likely value" } ) );
+descriptors.add( new Descriptor( "double weibull( double beta, double alpha )", new String[] { "beta", "alpha" }, new String[] { "double", "double" }, new String[] { "1", "2" }, new String[] { "The scale parameter > 0", "The shape parameter > 0" } ) );
+descriptors.add( new Descriptor( "double weibull( double alpha, double beta, double min )", new String[] { "alpha", "beta", "min" }, new String[] { "double", "double", "double" }, new String[] { "2", "1", "10" }, new String[] { "The shape parameter > 0", "The scale parameter > 0", "The miniimum value" } ) );
+descriptors.add( new Descriptor( "double weibull( double min, double max, double alpha, double shift, double stretch )", new String[] { "min", "max", "alpha", "shift", "stretch"}, new String[] { "double", "double", "double", "double", "double" }, new String[] { "5.5", "7", "2", "5", "1" }, new String[] { "The miniimum value (the distribution is truncated to return above this)", "The maximum value (the distribution is truncated to return below this)", "The shape parameter > 0", "Shift of the (stretched) distribution to the right", "Stretch of the distribution" } ) );
+//display the first distribution
+combobox.action();]]></StartupCode>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1488466275997</Id>
+				<Name><![CDATA[1488466275997]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameters:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+					<NetworkType>USER_DEF</NetworkType>
+					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1488528000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1488466275999</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1586442667560</CurrentLevel>
+			<ConnectionsId>1385539992745</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1269346041909</Id>
+					<Name><![CDATA[dindex]]></Name>
+					<X>-400</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1269347551446</Id>
+					<Name><![CDATA[paramstrings]]></Name>
+					<X>-400</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String[]]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new String[] { "", "", "", "", "", "", "", "" };]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1269350067546</Id>
+					<Name><![CDATA[ints]]></Name>
+					<X>-400</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int[]]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new int[8]]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1269350085992</Id>
+					<Name><![CDATA[doubles]]></Name>
+					<X>-400</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double[]]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new double[8]]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1269350814766</Id>
+					<Name><![CDATA[valids]]></Name>
+					<X>-400</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean[]]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new boolean[] { true, true, true, true, true, true, true, true }]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1269511345078</Id>
+					<Name><![CDATA[userdataset]]></Name>
+					<X>-400</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1269339852592</Id>
+					<Name><![CDATA[descriptors]]></Name>
+					<X>-400</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Descriptor]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1269354564708</Id>
+					<Name><![CDATA[distribution]]></Name>
+					<X>-400</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[switch( dindex ) {
+case 0: 	return uniform();
+case 1: 	return uniform_pos();
+case 2: 	return uniform( doubles[0] );
+case 3: 	return uniform( doubles[0], doubles[1] );
+case 4: 	return uniform_discr( ints[0] );
+case 5: 	return uniform_discr( ints[0], ints[1] );
+case 6: 	return randomTrue( doubles[0] ) ? 1 : 0;
+case 7: 	return randomFalse( doubles[0] ) ? 1 : 0;
+case 8: 	return bernoulli( doubles[0] );
+case 9: 	return beta( doubles[0], doubles[1] );
+case 10: 	return beta( doubles[0], doubles[1], doubles[2], doubles[3] );
+case 11: 	return beta( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4], doubles[5] );
+case 12: 	return binomial( doubles[0] );
+case 13: 	return binomial( doubles[0], ints[1] );
+case 14: 	return binomial( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4], doubles[5] );
+case 15: 	return cauchy( doubles[0] );
+case 16: 	return cauchy( doubles[0], doubles[1] );
+case 17: 	return chi2( doubles[0] );
+case 18: 	return chi2( doubles[0], doubles[1] );
+case 19: 	return erlang( doubles[0], ints[1] );
+case 20: 	return erlang( doubles[0], ints[1], doubles[2] );
+case 21: 	return exponential();
+case 22: 	return exponential( doubles[0] );
+case 23: 	return exponential( doubles[0], doubles[1] );
+case 24: 	return exponential( doubles[0], doubles[1], doubles[2], doubles[3] );
+case 25: 	return gamma( doubles[0], doubles[1] );
+case 26: 	return gamma( doubles[0], doubles[1], doubles[2] );
+case 27: 	return gamma( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4] );
+case 28: 	return geometric( doubles[0] );
+case 29: 	return hypergeometric( ints[0], ints[1], ints[2] );
+case 30: 	return gumbel1( doubles[0], doubles[1] );
+case 31: 	return gumbel2( doubles[0], doubles[1] );
+case 32: 	return laplace( doubles[0], doubles[1] );
+case 33: 	return logarithmic( doubles[0] );
+case 34: 	return logistic( doubles[0], doubles[1] );
+case 35: 	return lognormal( doubles[0], doubles[1], doubles[2] );
+case 36: 	return negativeBinomial( doubles[0], doubles[1] );
+case 37: 	return negativeBinomial( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4], doubles[5] );
+case 38: 	return normal();
+case 39: 	return normal( doubles[0] );
+case 40: 	return normal( doubles[0], doubles[1] );
+case 41: 	return normal( doubles[0], doubles[1], doubles[2], doubles[3] );
+case 42: 	return pareto( doubles[0] );
+case 43: 	return pareto( doubles[0], doubles[1] );
+case 44: 	return poisson( doubles[0] );
+case 45: 	return poisson( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4] );
+case 46: 	return rayleigh( doubles[0] );
+case 47: 	return rayleigh( doubles[0], doubles[1] );
+case 48: 	return triangular( doubles[0], doubles[1] );
+case 49: 	return triangular( doubles[0], doubles[1], doubles[2] );
+case 50: 	return triangular( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4] );
+case 51: 	return pert( doubles[0], doubles[1], doubles[2] );
+case 52: 	return weibull( doubles[0], doubles[1] );
+case 53: 	return weibull( doubles[0], doubles[1], doubles[2] );
+case 54: 	return weibull( doubles[0], doubles[1], doubles[2], doubles[3], doubles[4] );
+default:	error( "Invalid distribution index: " + dindex ); return 0;
+}]]></Body>
+				</Function>
+			</Functions>
+			<AnalysisData>
+    			<HistogramData>
+					<Id>1269356226253</Id>
+					<Name><![CDATA[histdata]]></Name>
+					<X>-400</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1488528000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>100</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.05]]></InitialIntervalSize>
+					<CalculateCDF>false</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1269428787541</Id>
+					<Name><![CDATA[userhistdata]]></Name>
+					<X>-400</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1488528000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>100</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.05]]></InitialIntervalSize>
+					<CalculateCDF>false</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+			</AnalysisData>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1385539992745</Id>
+					<Name><![CDATA[agentLink]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+
+			<Presentation>
+				<Level>
+					<Id>1586442667560</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>ALWAYS_SHOW</LevelVisibility>
+
+			<Presentation>
+				<Group>
+					<Id>1269346295286</Id>
+					<Name><![CDATA[paramgroup]]></Name>
+					<X>50</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Text>
+					<Id>1269346178642</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>70</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<YCode><![CDATA[index * 25]]></YCode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[descriptors.size() > 0 ?
+descriptors.get( dindex ).paramnames.length :
+0]]></Code>
+					</ReplicationCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[name]]></Text>
+					<TextCode><![CDATA[descriptors.get( dindex ).paramnames[ index ]]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1269350646229</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>78</X><Y>-2</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<YCode><![CDATA[index * 25 - 3]]></YCode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[descriptors.size() > 0 ?
+descriptors.get( dindex ).paramnames.length :
+0]]></Code>
+					</ReplicationCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>2</LineWidth>
+					<LineColor>-65536</LineColor>
+					<LineColorCode><![CDATA[valids[ index ] ? null : red]]></LineColorCode>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>84</Width>
+					<Height>24</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1269518504106</Id>
+					<Name><![CDATA[text14]]></Name>
+					<X>170</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<YCode><![CDATA[index * 25]]></YCode>
+					<ReplicationCode Class="CodeValue">
+						<Code><![CDATA[descriptors.size() > 0 ?
+descriptors.get( dindex ).paramhelp.length :
+0]]></Code>
+					</ReplicationCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-8355712</Color>
+					<Text><![CDATA[help]]></Text>
+					<TextCode><![CDATA[descriptors.get( dindex ).paramhelp[ index ]]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269347112979</Id>
+					<Name><![CDATA[paramedits]]></Name>
+					<X>80</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="80" Height="20">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor>-657956</FillColor>
+						<TextColor/>
+						<YCode><![CDATA[index * 25]]></YCode>
+						<VisibleCode><![CDATA[descriptors.size() > 0]]></VisibleCode>
+						<ReplicationCode Class="CodeValue">
+							<Code><![CDATA[descriptors.size() > 0 ?
+descriptors.get( dindex ).paramhelp.length :
+0]]></Code>
+						</ReplicationCode>
+						<Enabled>true</Enabled>
+						<EnableExpression><![CDATA[index < descriptors.get( dindex ).paramnames.length]]></EnableExpression>
+						<ActionCode><![CDATA[buttonShowDistribution.action();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<LinkTo>true</LinkTo>
+						<Link>paramstrings[ index ]</Link>
+					</ExtendedProperties>
+				</Control>
+			</Presentation>
+
+				</Group>
+				<Line>
+					<Id>1269357980353</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>30</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>740</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Text>
+					<Id>1269432387996</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>30</X><Y>375</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Paste your dataset:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Group>
+					<Id>1269434309677</Id>
+					<Name><![CDATA[group]]></Name>
+					<X>20</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<VisibleCode><![CDATA[histdata.count() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Text>
+					<Id>1269434021325</Id>
+					<Name><![CDATA[text2]]></Name>
+					<X>20</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Min:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434032950</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>70</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[histdata.min()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434092633</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>20</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Max:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434092649</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>70</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[histdata.max()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434545919</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>20</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Mean:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434545921</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>70</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12156236</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[histdata.mean()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1269434331103</Id>
+					<Name><![CDATA[group1]]></Name>
+					<X>20</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<VisibleCode><![CDATA[userhistdata.count() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Text>
+					<Id>1269434331105</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>20</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Min:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434331107</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>70</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-1414048684</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[userhistdata.min()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434331109</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>20</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Max:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434331111</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>70</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-1414048684</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[userhistdata.max()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434626381</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>20</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Mean:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269434626397</Id>
+					<Name><![CDATA[text13]]></Name>
+					<X>70</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-1414048684</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[userhistdata.mean()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269527829999</Id>
+					<Name><![CDATA[text15]]></Name>
+					<X>20</X><Y>-20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Count:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1269527830015</Id>
+					<Name><![CDATA[text16]]></Name>
+					<X>70</X><Y>-20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-1414048684</Color>
+					<Text><![CDATA[000]]></Text>
+					<TextCode><![CDATA[userhistdata.count()]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Group>
+				<Control Type="ComboBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269335873038</Id>
+					<Name><![CDATA[combobox]]></Name>
+					<X>30</X><Y>30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="740" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor>-1838346</FillColor>
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[//clear parameter values
+for( int j=0; j<paramstrings.length; j++ ) {
+	paramstrings[j] = "";
+	if( paramedits.size() > j )
+		paramedits.get(j).setValueToDefault();
+}
+//find distribution and set parameter values to default
+for( int i=0; i<descriptors.size(); i++ ) {
+	Descriptor d = descriptors.get(i);
+	if( d.fullname.equals( value ) ) {
+		dindex = i;
+		for( int j=0; j<d.paramnames.length; j++ ) {
+			paramstrings[j] = new String( d.paramdefaults[j] );
+			if( paramedits.size() > j )
+				paramedits.get(j).setValueToDefault();
+		}
+	}
+}
+//show
+buttonShowDistribution.action();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<Editable>false</Editable>
+						<Button><![CDATA[double uniform()]]></Button>
+						<Button><![CDATA[double uniform_pos()]]></Button>
+						<Button><![CDATA[double uniform( double max )]]></Button>
+						<Button><![CDATA[double uniform( double min, double max )]]></Button>
+						<Button><![CDATA[int uniform_discr( int max )]]></Button>
+						<Button><![CDATA[int uniform_discr( int min, int max )]]></Button>
+						<Button><![CDATA[boolean randomTrue( double p )]]></Button>
+						<Button><![CDATA[boolean randomFalse( double p )]]></Button>
+						<Button><![CDATA[int bernoulli( double p )]]></Button>
+						<Button><![CDATA[double beta( double p, double q )]]></Button>
+						<Button><![CDATA[double beta( double p, double q, double min, double max )]]></Button>
+						<Button><![CDATA[double beta( double min, double max, double p, double q, double shift, double stretch )]]></Button>
+						<Button><![CDATA[int binomial( double p )]]></Button>
+						<Button><![CDATA[int binomial( double p, int n )]]></Button>
+						<Button><![CDATA[double binomial( double min, double max, double p, double n, double shift, double stretch )]]></Button>
+						<Button><![CDATA[double cauchy( double lambda )]]></Button>
+						<Button><![CDATA[double cauchy( double lambda, double theta )]]></Button>
+						<Button><![CDATA[double chi2( double nu )]]></Button>
+						<Button><![CDATA[double chi2( double nu, double min )]]></Button>
+						<Button><![CDATA[double erlang( double beta, int m )]]></Button>
+						<Button><![CDATA[double erlang( double beta, int m, double min )]]></Button>
+						<Button><![CDATA[double exponential()]]></Button>
+						<Button><![CDATA[double exponential( double lambda )]]></Button>
+						<Button><![CDATA[double exponential( double lambda, double min )]]></Button>
+						<Button><![CDATA[double exponential( double min, double max, double shift, double stretch )]]></Button>
+						<Button><![CDATA[double gamma( double alpha, double beta )]]></Button>
+						<Button><![CDATA[double gamma( double alpha, double beta, double min )]]></Button>
+						<Button><![CDATA[double gamma( double min, double max, double alpha, double shift, double stretch )]]></Button>
+						<Button><![CDATA[int geometric( double p )]]></Button>
+						<Button><![CDATA[int hypergeometric( int ss, int dn, int ps )]]></Button>
+						<Button><![CDATA[double gumbel1( double a, double b )]]></Button>
+						<Button><![CDATA[double gumbel2( double a, double b )]]></Button>
+						<Button><![CDATA[double laplace( double phi, double theta )]]></Button>
+						<Button><![CDATA[int logarithmic( double theta )]]></Button>
+						<Button><![CDATA[double logistic( double beta, double alpha )]]></Button>
+						<Button><![CDATA[double lognormal( double mu, double sigma, double min )]]></Button>
+						<Button><![CDATA[double negativeBinomial( double p, double n )]]></Button>
+						<Button><![CDATA[double negativeBinomial( double min, double max, double p, double n, double shift, double stretch )]]></Button>
+						<Button><![CDATA[double normal()]]></Button>
+						<Button><![CDATA[double normal( double sigma )]]></Button>
+						<Button><![CDATA[double normal( double sigma, double mean )]]></Button>
+						<Button><![CDATA[double normal( double min, double max, double shift, double stretch )]]></Button>
+						<Button><![CDATA[double pareto( double alpha )]]></Button>
+						<Button><![CDATA[double pareto( double alpha, double min )]]></Button>
+						<Button><![CDATA[int poisson( double lambda )]]></Button>
+						<Button><![CDATA[double poisson( double min, double max, double mean, double shift, double stretch )]]></Button>
+						<Button><![CDATA[double rayleigh( double sigma )]]></Button>
+						<Button><![CDATA[double rayleigh( double sigma, double min )]]></Button>
+						<Button><![CDATA[double triangular( double min, double max )]]></Button>
+						<Button><![CDATA[double triangular( double min, double max, double mode )]]></Button>
+						<Button><![CDATA[double triangular( double min, double max, double left, double mode, double right )]]></Button>
+						<Button><![CDATA[double pert( double min, double max, double mode )]]></Button>
+						<Button><![CDATA[double weibull( double beta, double alpha )]]></Button>
+						<Button><![CDATA[double weibull( double alpha, double beta, double min )]]></Button>
+						<Button><![CDATA[double weibull( double min, double max, double alpha, double shift, double stretch )]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269349317695</Id>
+					<Name><![CDATA[buttonShowDistribution]]></Name>
+					<X>30</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="180" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[Descriptor d = descriptors.get( dindex );
+//validate parameter values
+for( int i=0; i<d.paramnames.length; i++ )
+	valids[i] = true;
+for( int i=0; i<d.paramnames.length; i++ ) {
+	if( d.paramtypes[i].equals( "double" ) ) {
+		try {
+			doubles[i] = Double.parseDouble( paramstrings[i] );
+		} catch( NumberFormatException e ) {
+			valids[i] = false;
+		}
+	} else { //assume int
+		try {
+			ints[i] = Integer.parseInt( paramstrings[i] );
+		} catch( NumberFormatException e ) {
+			valids[i] = false;
+		}
+	}
+}
+for( int i=0; i<d.paramnames.length; i++ )
+	if( ! valids[i] )
+		return;
+//generate 100000 distribution samples
+histdata.reset();
+for( int i=0; i<100000; i++ )
+	histdata.add( distribution() );]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<LabelText><![CDATA[Show 100K samples]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269433506469</Id>
+					<Name><![CDATA[buttonClear]]></Name>
+					<X>30</X><Y>530</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="70" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<VisibleCode><![CDATA[userhistdata.count() > 0]]></VisibleCode>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[userdataset = null;
+userdatasetfield.setValueToDefault();
+userhistdata.reset();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<LabelText><![CDATA[Clear]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269511383666</Id>
+					<Name><![CDATA[userdatasetfield]]></Name>
+					<X>30</X><Y>400</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="130" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor>-657956</FillColor>
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[userhistdata.reset();
+java.util.regex.Pattern p = java.util.regex.Pattern.compile( "-?\\d+\\.?\\d*" );
+java.util.regex.Matcher m = p.matcher( userdataset );
+while( m.find() ) {
+	try {
+		userhistdata.add( Double.parseDouble( m.group() ) );
+	} catch( Exception e ) {
+	}
+}]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<LinkTo>true</LinkTo>
+						<Link>userdataset</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1269513432974</Id>
+					<Name><![CDATA[buttonClear1]]></Name>
+					<X>160</X><Y>400</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="50" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<EnableExpression><![CDATA[userdatasetfield.getText().length() != 0]]></EnableExpression>
+						<ActionCode><![CDATA[userdatasetfield.action();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="14" Style="1"/>
+						<LabelText><![CDATA[OK]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+    			<Histogram>
+					<Id>1269356309680</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>210</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1488528000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>580</Width>
+					<Height>360</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>40</XOffset>
+						<YOffset>20</YOffset>
+						<Width>520</Width>
+						<Height>290</Height>
+						<BackgroundColor>-657931</BackgroundColor>
+						<BorderColor>-9868951</BorderColor>
+						<GridColor>-9868951</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>NONE</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>true</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>1.0</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1663336871728</Id>
+					<Expression><![CDATA[histdata]]></Expression>
+						<ColorPDF>-9001527</ColorPDF>
+						<ColorCDF>-9404272</ColorCDF>
+						<ColorLowPercent>-8097537</ColorLowPercent>
+						<ColorHighPercent>-4565549</ColorHighPercent>
+						<ColorMean>-16776961</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[Probability distribution]]></Title>							
+					</HistogramDataExpression>
+					<HistogramDataExpression>
+					<Id>1663336871729</Id>
+					<Expression><![CDATA[userhistdata]]></Expression>
+						<ColorPDF>-1409311845</ColorPDF>
+						<ColorCDF>-7667573</ColorCDF>
+						<ColorLowPercent>-60269</ColorLowPercent>
+						<ColorHighPercent>-2354116</ColorHighPercent>
+						<ColorMean>-65536</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[Your data set]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+				<Text>
+					<Id>1663337602983</Id>
+					<Name><![CDATA[text17]]></Name>
+					<X>265</X><Y>140</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<VisibleCode><![CDATA[descriptors.get( dindex ).paramhelp.length == 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-8355712</Color>
+					<Text><![CDATA[Selected distribution has no arguments]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>	
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>800</Width>
+		<Height>600</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+	
+	<RunConfiguration ActiveObjectClassId="1269269689826">
+		<Id>1488466276003</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1269269689000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1269275689000]]></FinalDate>	
+			<FinalTime><![CDATA[100.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>true</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>false</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<Experiments>	
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1269269689826">
+			<Id>1269269689842</Id>
+			<Name><![CDATA[Simulation]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>64</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1269358215271</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>50</X><Y>170</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Using this application you can explore different probability distributions.
+You can also upload your own dataset and compare it with a distribution.]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1390149151788</Id>
+					<Name><![CDATA[text3]]></Name>
+					<X>170</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[Probability Distributions]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>26</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Image>
+					<Id>1390149151820</Id>
+					<Name><![CDATA[image2]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>100</Width>
+					<Height>120</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[probability_distributions]]></PackageName>
+							<ClassName><![CDATA[book.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>true</OriginalSize>
+				</Image>
+				<Text>
+					<Id>1390149566564</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>50</X><Y>210</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-14774017</Color>
+					<Text><![CDATA[AnyLogic LEGACY NOTICE
+Since version 7 AnyLogic offers a new Probability Distribution Wizard (see the rightmost button on the toolbar)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>11</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Image>
+					<Id>1537374632339</Id>
+					<Name><![CDATA[image1]]></Name>
+					<X>50</X><Y>500</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[getExperimentHost().openWebSite("https://www.anylogic.com");]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>200</Width>
+					<Height>75</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[probability_distributions]]></PackageName>
+							<ClassName><![CDATA[AnyLogic model logo dark.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+			</Presentation>
+
+			<Parameters>			
+			</Parameters>			
+			<PresentationProperties>
+				<EnableZoomAndPanning>false</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[Probability Distributions : Simulation]]></Title>	
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1269269689000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1269275689000]]></FinalDate>	
+				<FinalTime><![CDATA[100.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<BypassInitialScreen>false</BypassInitialScreen>
+		</SimulationExperiment>	
+	</Experiments>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1269339149856</Id>
+			<Name><![CDATA[Descriptor]]></Name>
+			<Text><![CDATA[/**
+ * Descriptor
+ */	
+public class Descriptor implements java.io.Serializable {
+
+
+    /**
+     * Default constructor
+     */
+    public Descriptor( String fullname, String[] paramnames, String[] paramtypes, String[] paramdefaults, String[] paramhelp ){
+    	this.fullname = fullname;
+    	if( paramnames.length != paramtypes.length || paramnames.length != paramdefaults.length || paramnames.length != paramhelp.length )
+    		throw new RuntimeException( "Incorrect parameters for " + fullname );
+    	this.paramnames = paramnames;
+    	this.paramtypes = paramtypes;
+    	this.paramdefaults = paramdefaults;
+    	this.paramhelp = paramhelp;
+    }
+     
+	// Fields
+    
+    String fullname;
+    
+	String[] paramnames;
+	
+	String[] paramtypes;
+    
+    String[] paramdefaults;
+    
+    String[] paramhelp;
+    
+	/**
+	 * This number is here for model snapshot storing purpose<br>
+	 * It needs to be changed when this class gets changed
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
+	<ModelResources>
+		<Resource>
+			<Path><![CDATA[book.png]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[AnyLogic model logo dark.png]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+	</ModelResources>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+	<CloudModelUuid><![CDATA[09ccd5fb-6fe0-42b1-a3c3-b3989d1a2529]]></CloudModelUuid>
+</Model>
+</AnyLogicWorkspace>
