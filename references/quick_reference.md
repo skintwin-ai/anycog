@@ -1,5 +1,8 @@
 # AnyCog Quick Reference Guide
 
+> **Note**: AnyCog is the name of this OpenCog-inspired framework for AnyLogic modeling. 
+> It integrates all AnyLogic features (DES, ABM, SD, MH, Movement, Fluid) into a unified cognitive architecture.
+
 This guide provides a quick reference for common tasks when building integrated AnyCog models.
 
 ## AtomSpace Operations

@@ -231,6 +231,9 @@ agent Customer {
     
     void updateSatisfaction(double deliveryTime) {
         // Faster delivery = higher satisfaction
+        // deliveryTime is in minutes, 1440 minutes = 1 day
+        // Perfect satisfaction (1.0) if delivered instantly, 
+        // decreases linearly with time, minimum 0.5
         double satisfaction = Math.max(0.5, Math.min(1.0, 1.0 - (deliveryTime / 1440.0)));
         
         // Aggregate satisfaction across all customers

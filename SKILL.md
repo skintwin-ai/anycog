@@ -1,6 +1,6 @@
 ---
 name: anylogic-modeler
-description: Build and analyze simulation models using AnyLogic with OpenCog-inspired cognitive architecture. Use for tasks involving discrete-event, agent-based, and system dynamics modeling, or any combination of these paradigms. Supports fully integrated multi-paradigm models with cognitive synergy. Triggers on mentions of AnyLogic, simulation modeling, DES, ABM, SD, or OpenCog.
+description: Build and analyze simulation models using AnyLogic with OpenCog-inspired cognitive architecture. Use for tasks involving discrete-event (DES), agent-based (ABM), system dynamics (SD), material handling (MH), movement (pedestrian/vehicle/rail), and fluid dynamics modeling, or any combination of these paradigms. Supports fully integrated multi-paradigm models with cognitive synergy. Triggers on mentions of AnyLogic, simulation modeling, DES, ABM, SD, MH, or OpenCog.
 ---
 
 # AnyCog: AnyLogic Modeler with OpenCog Architecture

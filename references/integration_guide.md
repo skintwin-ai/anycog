@@ -162,7 +162,10 @@ Transition: DecideToPurchase {
 StockVariable: TotalPurchases {
     inflows: {
         // Listen for messages from ABM
-        messageBus.subscribe("IncrementStock", (stock, amount) -> {
+        // Message structure: Map with "stock" (String) and "amount" (Integer)
+        messageBus.subscribe("IncrementStock", (data) -> {
+            String stock = (String) data.get("stock");
+            Integer amount = (Integer) data.get("amount");
             if (stock.equals("TotalPurchases")) {
                 this.increment(amount);
             }

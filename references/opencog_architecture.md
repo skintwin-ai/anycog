@@ -1,6 +1,6 @@
 # OpenCog-Inspired Architecture for AnyCog
 
-This document defines the unified cognitive architecture that integrates all AnyLogic modeling paradigms (DES, ABM, SD) and libraries into a cohesive OpenCog-style simulation framework.
+This document defines the unified cognitive architecture that integrates all AnyLogic modeling paradigms (DES, ABM, SD, MH, Movement, Fluid) and libraries into a cohesive OpenCog-style simulation framework.
 
 ## Overview
 
