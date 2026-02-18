@@ -663,7 +663,7 @@ atomSpace.createLink("DissolveLink", membrane, parent);
 
 // Transport: Move objects between membranes
 psystem.transportObject(sourceMembrane, "object_x", targetMembrane);
-atomSpace.createLink(TransportLink, objectNode, targetMembrane);
+atomSpace.createLink("TransportLink", objectNode, targetMembrane);
 
 // Query membrane state
 int objCount = psystem.getObjectCount(membrane, "molecule_a");

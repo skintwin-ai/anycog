@@ -95,15 +95,17 @@ initial.addObject(generator, "encode", 4); // 4 variables to encode
 RuleNode divRule1 = new RuleNode("div_step1");
 divRule1.setMembrane(generator);
 divRule1.setPattern("encode");
-divRule1.setReplacement(
-    new MembraneReplacement()
-        .addMembrane(new MembraneSpec()
-            .addObject("encode")
-            .addAssignment("x1", true))
-        .addMembrane(new MembraneSpec()
-            .addObject("encode")
-            .addAssignment("x1", false))
-);
+// Configure membrane division with two children encoding variable x1
+MembraneReplacement replacement = new MembraneReplacement();
+MembraneSpec child1 = new MembraneSpec(); // Helper class for membrane configuration
+child1.addObject("encode");
+child1.addAssignment("x1", true);
+MembraneSpec child2 = new MembraneSpec();
+child2.addObject("encode");
+child2.addAssignment("x1", false);
+replacement.addMembrane(child1);
+replacement.addMembrane(child2);
+divRule1.setReplacement(replacement);
 divRule1.setAction(DivisionAction.SPLIT_BINARY);
 divRule1.setTargetCount(2); // Creates 2 membranes
 
@@ -348,9 +350,11 @@ public class SolutionSelection {
     
     private Assignment extractAssignment(MembraneNode membrane) {
         Map<String, Boolean> values = new HashMap<>();
-        for (String var : membrane.getAttributeNames()) {
-            if (var.startsWith("x")) {
-                values.put(var, membrane.getAttribute(var));
+        // Extract SAT variable assignments (pattern: x1, x2, x3, x4)
+        for (String attrName : membrane.getAttributeNames()) {
+            // More robust check: matches "x" followed by digits
+            if (attrName.matches("^x\\d+$")) {
+                values.put(attrName, membrane.getAttribute(attrName));
             }
         }
         return new Assignment(values);
@@ -681,8 +685,8 @@ public class SmartManufacturingSystem {
         // 8. Meta-cognitive layer analyzes integration
         meta.recordPattern("P-System provided parallel optimization");
         meta.recordPattern("All engines contributed to evaluation");
-        meta.recordSynergy("Cross-paradigm scheduling", 
-                          improvement: 0.35); // 35% better than single paradigm
+        // 35% better than single paradigm
+        meta.recordSynergy("Cross-paradigm scheduling", 0.35);
     }
 }
 ```
