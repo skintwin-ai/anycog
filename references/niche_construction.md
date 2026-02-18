@@ -716,7 +716,7 @@ Characterization:
     System: {feedback: True, resources: "constrained", optimization: "cost_min"}
     
 Key Features:
-    - Stochastic arrivals → Need generatorwith random distribution
+    - Stochastic arrivals → Need generator with random distribution
     - Inventory tracking → Need state variables
     - Cost minimization → Need optimizer
     - Service level → Need monitor + decision logic

@@ -1,4 +1,4 @@
-# Modular Sim Components Implementation Summary
+# Modular Simulation Components Implementation Summary
 
 ## Overview
 
