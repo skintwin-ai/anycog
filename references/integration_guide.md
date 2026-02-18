@@ -437,6 +437,220 @@ Use Coherence Checker to validate:
 - Temporal ordering is preserved
 - State updates are consistent
 
+## P-System Integration Patterns
+
+### Pattern 5: P-System + DES (Parallel Process Optimization)
+
+**Use Case**: Use P-system massively parallel search to optimize DES process parameters.
+
+**AtomSpace Structure**:
+```
+ProcessNode: "ManufacturingProcess"
+├── ParameterNode: "CycleTime" = ?
+├── ParameterNode: "BufferSize" = ?
+└── MetricNode: "Throughput" = measure
+
+MembraneNode: "OptimizationSpace"
+├── ContainmentLink → MembraneNode: "Config_1" (CycleTime=10, BufferSize=5)
+├── ContainmentLink → MembraneNode: "Config_2" (CycleTime=10, BufferSize=10)
+└── ... (2^n configurations)
+
+RuleNode: "DivisionRule" (creates search space)
+RuleNode: "EvaluationRule" (tests each config via DES)
+RuleNode: "SelectionRule" (picks optimal config)
+```
+
+**Integration Flow**:
+1. DES identifies optimization problem (parameters to tune)
+2. P-system creates exponential search space via division
+3. Each membrane encodes one parameter configuration
+4. P-system invokes DES to evaluate each configuration
+5. P-system selects optimal configuration
+6. Optimal parameters applied back to DES
+
+**Benefits**: Exponential parallelism for parameter search, DES provides domain-specific evaluation
+
+### Pattern 6: P-System + ABM (Cognitive Agents)
+
+**Use Case**: Agents use internal P-systems for parallel decision-making and reasoning.
+
+**AtomSpace Structure**:
+```
+EntityNode: "CognitiveAgent_1"
+├── StateNode: "Beliefs" = {...}
+├── StateNode: "Goals" = {...}
+└── MembraneNode: "DecisionSpace"
+    ├── ContainmentLink → MembraneNode: "Option_A"
+    ├── ContainmentLink → MembraneNode: "Option_B"
+    └── ContainmentLink → MembraneNode: "Option_C"
+
+ObjectNode: "Belief_X" (in each option membrane)
+ObjectNode: "Goal_Y" (in each option membrane)
+RuleNode: "ConsistencyCheck" (evaluate belief-goal fit)
+RuleNode: "SelectBest" (choose optimal action)
+```
+
+**Integration Flow**:
+1. ABM agent faces decision point
+2. Agent creates internal P-system with decision alternatives
+3. P-system evaluates all options in parallel
+4. Objects represent beliefs, goals, constraints
+5. Rules check consistency and compute utility
+6. Best option selected via P-system output
+7. Agent executes selected action in ABM
+
+**Benefits**: Bio-inspired cognition, parallel evaluation of alternatives, explainable decisions
+
+### Pattern 7: P-System + SD (Population Membrane Dynamics)
+
+**Use Case**: Model population-level membrane computing behavior with aggregate dynamics.
+
+**AtomSpace Structure**:
+```
+StateNode: "MembranePopulation" (SD stock)
+StateNode: "AverageComplexity" (SD stock)
+FlowNode: "MembranesBirth" (SD flow, from P-system division)
+FlowNode: "MembranesDeath" (SD flow, from P-system dissolution)
+
+MembraneNode: "Individual_1" (P-system instance)
+├── ObjectNode: "Complexity" = 15
+└── RuleNode: "DivisionRule" (triggers at complexity > 20)
+
+ParameterNode: "BirthRate" (SD → P-system)
+ParameterNode: "DeathRate" (SD → P-system)
+```
+
+**Integration Flow**:
+1. SD defines population-level parameters (birth/death rates)
+2. P-system models individual membrane behavior
+3. Membranes divide (birth) or dissolve (death) based on rules
+4. P-system reports aggregate statistics to SD
+5. SD updates population dynamics
+6. Feedback loop: SD rates influence P-system behavior
+
+**Benefits**: Multi-scale modeling (micro P-system + macro SD), emergent population dynamics
+
+### Pattern 8: Full Multi-Engine with P-System
+
+**Use Case**: Complete cognitive synergy including bio-inspired parallel computation.
+
+**AtomSpace Structure**:
+```
+# DES Layer
+ProcessNode: "ProductionLine"
+
+# ABM Layer
+EntityNode: "Worker" (with behavior)
+
+# SD Layer
+StateNode: "Capacity" (aggregate)
+
+# MH Layer
+ProcessNode: "Conveyor" (material flow)
+
+# P-System Layer
+MembraneNode: "ScheduleOptimizer"
+├── Generates exponential search space
+└── Evaluates against all other engines
+
+# Meta-Cognitive Layer
+PatternNode: "BottleneckPattern" (discovered cross-paradigm)
+
+# Autognosis Layer
+OptimizationNode: "IntegrationImprovement" (self-discovered)
+```
+
+**Integration Flow**:
+1. DES identifies scheduling problem
+2. P-system creates parallel search space
+3. ABM evaluates worker feasibility for each schedule
+4. SD provides capacity constraints
+5. MH validates material flow
+6. P-system selects multi-objective optimal
+7. All engines updated with optimal schedule
+8. Meta-cognitive mines patterns
+9. Autognosis improves integration
+
+**Benefits**: Maximum cognitive synergy, solutions impossible with single paradigm, continuous self-improvement
+
+## P-System Specific Integration Guidelines
+
+### Initialization
+
+```java
+// Register P-System Engine
+PSystemEngine psystem = new PSystemEngine(atomSpace);
+integrationManager.registerEngine(psystem);
+
+// Create membrane structure
+MembraneNode root = atomSpace.createNode("MembraneNode", "Root");
+psystem.setInitialConfiguration(root);
+```
+
+### Synchronization
+
+P-systems require special synchronization due to maximal parallelism:
+
+```java
+class PSystemIntegrationManager extends IntegrationManager {
+    void step() {
+        // 1. Other engines prepare data
+        desEngine.step();
+        abmEngine.step();
+        
+        // 2. P-system executes one complete step (all parallel rules)
+        psystem.globalStep();  // Barrier synchronization inside
+        
+        // 3. Collect P-system results
+        Map<String, Object> results = psystem.getResults();
+        
+        // 4. Update other engines based on results
+        updateEnginesWithPSystemResults(results);
+    }
+}
+```
+
+### Cross-Engine Communication
+
+**P-System → Other Engines:**
+```java
+// P-system sends optimization results
+messageBus.send(new Message(
+    from: "PSystem",
+    to: "DES",
+    type: "OptimalParameters",
+    data: optimalConfig
+));
+```
+
+**Other Engines → P-System:**
+```java
+// DES sends evaluation requests
+messageBus.send(new Message(
+    from: "DES",
+    to: "PSystem",
+    type: "EvaluateConfiguration",
+    data: configToTest
+));
+```
+
+### Performance Considerations
+
+1. **Memory Management**: P-systems can create exponential membranes
+   - Monitor memory usage
+   - Implement pruning strategies
+   - Use bounded division depth
+
+2. **Parallelization**: Leverage hardware
+   - Map membranes to threads/cores
+   - Use GPU for massive parallelism
+   - Consider FPGA for specialized applications
+
+3. **Integration Overhead**: Minimize communication
+   - Batch messages to other engines
+   - Cache frequently accessed AtomSpace data
+   - Use lazy evaluation where possible
+
 ## Best Practices
 
 1. **Start Simple**: Begin with two engines, add more as needed
@@ -447,6 +661,8 @@ Use Coherence Checker to validate:
 6. **Design for Modularity**: Each engine should work independently if needed
 7. **Leverage Meta-Cognition**: Let Pattern Miner discover integration issues
 8. **Enable Autognosis**: Let the system optimize its own integration
+9. **Consider P-System for Optimization**: Use massively parallel search for hard problems
+10. **Bound P-System Resources**: Implement limits to prevent exponential explosion
 
 ## Example: Integrated Supply Chain Model
 
@@ -458,4 +674,14 @@ See the examples directory for a complete implementation demonstrating all integ
 - Meta-Cognitive: Bottleneck detection and optimization suggestions
 - Autognosis: Continuous model improvement
 
-This example showcases how differentiated components integrate into a cohesive, intelligent simulation system.
+## Example: P-System SAT Solver
+
+See `examples/psystem_sat_solver.md` for a complete P-system implementation demonstrating:
+- Exponential division for search space generation
+- Maximal parallel clause evaluation
+- Solution selection and dissolution
+- Integration with DES, ABM, SD for multi-objective optimization
+- Meta-cognitive pattern mining
+- Autognosis-driven performance optimization
+
+These examples showcase how differentiated components integrate into a cohesive, intelligent simulation system with bio-inspired parallel computation capabilities.
