@@ -2,6 +2,8 @@
 
 AnyCog is a comprehensive framework for building integrated, multi-paradigm simulation models using AnyLogic with an OpenCog-inspired cognitive architecture. It enables seamless integration of Discrete-Event Simulation (DES), Agent-Based Modeling (ABM), System Dynamics (SD), Material Handling (MH), Movement, and Fluid dynamics into a unified cognitive system.
 
+**NEW**: AnyCog now includes a **Niche Construction Engine** that enables **self-assembly of intelligence density** around domains of inquiry using modular simulation components as a cognitive grammar.
+
 ## Key Features
 
 ### 🧠 **Unified Cognitive Architecture**
@@ -27,6 +29,26 @@ AnyCog is a comprehensive framework for building integrated, multi-paradigm simu
 - Proposes and executes optimizations
 - Continuously evolves toward better performance
 
+### 🧩 **Modular Component Library** (NEW)
+- **18+ Reusable Components**: Perception, Reasoning, Action, Memory, Communication, Meta components
+- **Domain-Agnostic Design**: Components work across different problem domains
+- **Composable Architecture**: Build complex systems from simple, tested parts
+- **Self-Describing**: Components publish capabilities and requirements
+
+### 📐 **Cognitive Grammar** (NEW)
+- **Formal Composition Rules**: Type checking, temporal ordering, resource conservation
+- **Validation**: Automatic checking of architecture correctness
+- **Pattern Library**: Proven component combinations for common scenarios
+- **Extensible**: Add new rules and patterns as needed
+
+### 🏗️ **Niche Construction Engine** (NEW)
+- **Self-Assembly**: Architectures construct themselves from domain descriptions
+- **Domain Analysis**: Automatically characterizes problem domains
+- **Pattern Matching**: Finds optimal architectural patterns
+- **Component Selection**: Chooses best components for the niche
+- **Intelligence Density Optimization**: Maximizes capability per unit complexity
+- **Continuous Learning**: Improves from experience
+
 ## Repository Structure
 
 ```
@@ -37,15 +59,21 @@ anycog/
 │   ├── opencog_architecture.md          # Core architecture specification
 │   ├── integration_guide.md             # Detailed integration patterns
 │   ├── autognosis_integration.md        # Self-optimization documentation
+│   ├── modular_components.md            # NEW: Modular component library
+│   ├── cognitive_grammar.md             # NEW: Composition rules and patterns
+│   ├── niche_construction.md            # NEW: Self-assembly engine
+│   ├── domain_patterns.md               # NEW: Pattern catalog
 │   ├── paradigms.md                     # Modeling paradigm reference
 │   ├── psystem_membrane_computing.md    # P-system reference documentation
 │   ├── process_modeling_library.md      # DES blocks reference
 │   ├── material_handling_library.md     # MH blocks reference
+│   ├── quick_reference.md               # Developer quick reference
 │   └── other_libraries.md               # Movement & Fluid blocks reference
 ├── examples/
 │   ├── integrated_supply_chain.md       # Complete integrated example
 │   ├── psystem_sat_solver.md            # P-system SAT solver example
 │   ├── torch_nn_neural_network.md       # Neural network training with torch/nn
+│   ├── self_assembly_emergency_dept.md  # NEW: Self-assembly demonstration
 │   ├── basicmodels/                     # AnyLogic basic examples
 │   ├── bigbookmodels/                   # AnyLogic advanced examples
 │   ├── models/                          # Additional examples
@@ -54,12 +82,30 @@ anycog/
 
 ## Getting Started
 
+### Quick Start: Self-Assembly (NEW)
+
+For automatic architecture construction:
+1. **Describe your domain** in natural language
+2. **Run the niche construction engine** to auto-generate architecture
+3. **Validate and deploy** the assembled model
+
+See:
+- **[Niche Construction Engine](references/niche_construction.md)**: Self-assembly process
+- **[Self-Assembly Example](examples/self_assembly_emergency_dept.md)**: Complete demonstration
+
 ### 1. Understand the Architecture
 
 Start by reading the core architecture document:
 - **[OpenCog Architecture](references/opencog_architecture.md)**: Learn about AtomSpace, cognitive processes, and the layered architecture
 
-### 2. Follow the Workflow
+### 2. Explore Modular Components (NEW)
+
+Learn about reusable building blocks:
+- **[Modular Components](references/modular_components.md)**: 18+ component types
+- **[Cognitive Grammar](references/cognitive_grammar.md)**: Composition rules
+- **[Domain Patterns](references/domain_patterns.md)**: 8 proven patterns
+
+### 3. Follow the Workflow
 
 The complete workflow is documented in:
 - **[SKILL.md](SKILL.md)**: Step-by-step guide to building integrated models
@@ -87,11 +133,13 @@ Common patterns:
 ### 4. Explore the Examples
 
 See complete implementations:
+- **[Self-Assembly Emergency Department](examples/self_assembly_emergency_dept.md)**: NEW - Automated architecture construction
 - **[Integrated Supply Chain Example](examples/integrated_supply_chain.md)**: Full model with all cognitive layers
 - **[P-System SAT Solver](examples/psystem_sat_solver.md)**: Massively parallel computation for NP-complete problems
 - **[Torch/nn Neural Network](examples/torch_nn_neural_network.md)**: Neural network training as a cognitive architecture
 
 The examples demonstrate:
+- **Self-assembly** of cognitive architectures from domain descriptions (NEW)
 - Multi-paradigm integration (SD + DES + ABM + MH + P-System)
 - Cross-paradigm feedback loops
 - Meta-cognitive pattern mining
@@ -119,6 +167,70 @@ A hypergraph containing all simulation knowledge:
 - `InteractionLink`: Agent communications
 - `ContainmentLink`: Hierarchical structure
 - `TemporalLink`: Time ordering
+
+### Modular Components (NEW)
+
+Reusable building blocks for cognitive architectures:
+
+**Component Categories**:
+- **Perception**: Sensors, counters, pattern detectors
+- **Reasoning**: Classifiers, optimizers, predictors, decision-makers
+- **Action**: Generators, transformers, routers, allocators
+- **Memory**: Buffers, databases, caches
+- **Communication**: Broadcasters, subscribers, aggregators
+- **Meta**: Monitors, learners, reflectors
+
+Each component:
+- Is **domain-agnostic** (works across problem domains)
+- Has **clear interfaces** (declared inputs/outputs)
+- Is **composable** (combines with other components)
+- Is **self-describing** (publishes capabilities)
+
+See **[Modular Components](references/modular_components.md)** for full catalog.
+
+### Cognitive Grammar (NEW)
+
+Formal rules for composing components into valid architectures:
+
+**Core Rules**:
+1. **Type Matching**: Output types must match input types
+2. **Temporal Ordering**: Causality preserved in execution order
+3. **Resource Conservation**: All generated entities have lifecycle endpoints
+4. **Feedback Validity**: Cycles must have break conditions
+5. **State Consistency**: Shared state must be synchronized
+
+**Composition Patterns**:
+- Linear Pipeline (sequential processing)
+- Branching Decision (conditional routing)
+- Feedback Loop (iterative refinement)
+- Parallel Composition (concurrent operations)
+- Hierarchical Structure (nested systems)
+- Observer Pattern (passive monitoring)
+
+See **[Cognitive Grammar](references/cognitive_grammar.md)** for complete specification.
+
+### Niche Construction Engine (NEW)
+
+Automated system for self-assembling cognitive architectures:
+
+**Process**:
+1. **Domain Analysis**: Extract characteristics from description
+2. **Pattern Matching**: Find optimal architectural patterns
+3. **Component Selection**: Choose best components for niche
+4. **Architecture Composition**: Assemble according to grammar
+5. **Validation**: Ensure correctness
+6. **Performance Prediction**: Estimate fitness
+7. **Evolution**: Iteratively improve
+8. **Meta-Learning**: Capture experience for future use
+
+**Intelligence Density**:
+```
+Intelligence Density = (Capability + Synergy) / Complexity
+```
+
+Higher density = more problem-solving power per unit of model complexity.
+
+See **[Niche Construction](references/niche_construction.md)** for complete specification.
 
 ### Cognitive Processes (Layer 2)
 
