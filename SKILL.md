@@ -36,6 +36,7 @@ Before writing any code, you MUST determine which cognitive processes and modeli
 | **Material Flow Engine (MH)** | Modeling physical material handling | Conveyors, transporters, warehouses, AGVs |
 | **Movement Engine (Spatial)** | Modeling pedestrians, vehicles, trains | Pathfinding, collision avoidance, traffic simulation |
 | **Fluid Dynamics Engine** | Modeling continuous flows, chemicals, bulk materials | Tank levels, pipeline flows, batch processing |
+| **P-System Membrane Computing** | Modeling massively parallel computation, bio-inspired processes | Exponential parallelism, distributed algorithms, NP-problem solving, cellular processes |
 
 Most real-world problems require **multiple cognitive processes working together** (cognitive synergy). The OpenCog architecture makes this integration seamless through the unified AtomSpace.
 
@@ -53,6 +54,9 @@ Map your domain entities to AtomSpace nodes:
 -   **StateNode**: System states and accumulations (e.g., "QueueLength", "InventoryLevel")
 -   **ParameterNode**: Configuration values (e.g., "ArrivalRate", "ServiceTime")
 -   **MetricNode**: Measurements and KPIs (e.g., "Throughput", "Utilization")
+-   **MembraneNode**: P-system compartments (e.g., "CellRegion1", "Organelle")
+-   **ObjectNode**: P-system multiset elements (e.g., "molecule_a", "signal_spike")
+-   **RuleNode**: P-system evolution rules (e.g., "reaction_rule1", "transport_rule")
 
 ### 2.2 Define Link Types
 
@@ -62,8 +66,12 @@ Specify how nodes relate to each other:
 -   **TransitionLink**: State changes (e.g., Waiting → Being Served)
 -   **InfluenceLink**: Causal relationships (e.g., Demand influences Production)
 -   **InteractionLink**: Agent communications (e.g., Agent A requests Resource from Agent B)
--   **ContainmentLink**: Hierarchical containment (e.g., Items in Rack, Agents in Population)
+-   **ContainmentLink**: Hierarchical containment (e.g., Items in Rack, Agents in Population, Membranes in P-system)
 -   **TemporalLink**: Time-ordered sequences (e.g., Event A before Event B)
+-   **EvolutionLink**: P-system rule application (e.g., Object transforms via Rule)
+-   **TransportLink**: P-system object movement (e.g., Object crosses Membrane boundary)
+-   **DivisionLink**: P-system membrane division (e.g., Membrane splits into children)
+-   **DissolveLink**: P-system membrane dissolution (e.g., Membrane dissolves, releases objects)
 
 ### 2.3 Document the Schema
 

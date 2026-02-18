@@ -587,11 +587,222 @@ if (report.hasViolations()) {
 - [ ] Monitor memory usage of AtomSpace
 - [ ] Disable detailed tracing in production runs
 - [ ] Let Autognosis suggest performance optimizations
+- [ ] For P-systems: implement pruning to prevent exponential explosion
+- [ ] For P-systems: use bounded division depth
+- [ ] For P-systems: leverage hardware parallelism (GPU/FPGA)
+
+## P-System Membrane Computing Operations
+
+### Creating P-System Structures
+
+```java
+// Create membrane hierarchy
+MembraneNode skin = atomSpace.createNode("MembraneNode", "Skin");
+MembraneNode region1 = atomSpace.createNode("MembraneNode", "Region1");
+atomSpace.createLink("ContainmentLink", skin, region1);
+
+// Create objects (multisets)
+ObjectNode objA = atomSpace.createNode("ObjectNode", "molecule_a");
+atomSpace.setValue(region1, objA, 5); // 5 copies in region1
+
+// Create evolution rules
+RuleNode evolveRule = atomSpace.createNode("RuleNode", "reaction_1");
+evolveRule.setPattern("a");           // Consumes 'a'
+evolveRule.setReplacement("b,b");     // Produces two 'b'
+evolveRule.setMembrane(region1);      // Applies in region1
+evolveRule.setPriority(1);            // Priority 1
+
+// Create transport rules
+RuleNode transportRule = atomSpace.createNode("RuleNode", "transport_1");
+transportRule.setPattern("a");        // Consumes 'a'
+transportRule.setDirection("in");     // Move into child membrane
+transportRule.setMembrane(skin);      // Applies at skin boundary
+
+// Link rules to membranes
+atomSpace.createLink("EvolutionLink", evolveRule, region1);
+atomSpace.createLink("TransportLink", transportRule, skin);
+```
+
+### P-System Execution
+
+```java
+// Initialize P-System Engine
+PSystemEngine psystem = new PSystemEngine(atomSpace);
+psystem.setInitialConfiguration(skin);
+
+// Execute single step (maximal parallelism)
+ConfigurationNode config = psystem.step();
+
+// Execute until halting
+while (!psystem.isHalted()) {
+    psystem.step();
+}
+
+// Get results
+MultiSet results = psystem.getOutput();
+Map<String, Integer> finalCounts = psystem.getFinalCounts();
+
+// Get metrics
+int steps = psystem.getStepCount();
+double parallelism = psystem.getAverageParallelism();
+int totalRules = psystem.getTotalRuleApplications();
+```
+
+### Membrane Operations
+
+```java
+// Division: Create child membranes
+MembraneNode child1 = psystem.createChildMembrane(parent);
+MembraneNode child2 = psystem.createChildMembrane(parent);
+atomSpace.createLink("DivisionLink", parent, child1);
+atomSpace.createLink("DivisionLink", parent, child2);
+
+// Dissolution: Remove membrane and release contents
+psystem.dissolveMembrane(membrane);
+atomSpace.createLink("DissolveLink", membrane, parent);
+
+// Transport: Move objects between membranes
+psystem.transportObject(sourceMembrane, "object_x", targetMembrane);
+atomSpace.createLink("TransportLink", objectNode, targetMembrane);
+
+// Query membrane state
+int objCount = psystem.getObjectCount(membrane, "molecule_a");
+List<String> allObjects = psystem.getAllObjects(membrane);
+boolean canApply = psystem.isRuleApplicable(rule, membrane);
+```
+
+### P-System Variants
+
+```java
+// Cell-like P-system (hierarchical tree)
+PSystemEngine cellLike = new PSystemEngine.CellLike(atomSpace);
+cellLike.enableDivision(true);
+cellLike.enableDissolution(true);
+
+// Tissue P-system (network structure)
+PSystemEngine tissue = new PSystemEngine.Tissue(atomSpace);
+tissue.setTopology(TopologyType.GRAPH);
+tissue.addChannel(membrane1, membrane2); // Add communication channel
+
+// Neural P-system (spiking)
+PSystemEngine neural = new PSystemEngine.Neural(atomSpace);
+neural.enableSpikingRules(true);
+neural.setDelayFunction((spike) -> spike.getDelay());
+neural.setForgettingThreshold(0.5);
+
+// Active membrane P-system
+PSystemEngine active = new PSystemEngine.Active(atomSpace);
+active.enableCharges(true);
+active.setChargeSet("+", "0", "-");
+active.enableDivision(true);
+```
+
+### P-System Integration Patterns
+
+```java
+// Pattern 1: P-System for DES optimization
+// DES identifies parameters to optimize
+List<Parameter> params = desEngine.getParameters();
+
+// P-System creates search space
+MembraneNode searchSpace = psystem.createSearchSpace(params);
+psystem.executeDivision(params.size());
+
+// Evaluate each configuration
+for (MembraneNode config : psystem.getWorkerMembranes()) {
+    Map<String, Double> values = extractValues(config);
+    double score = desEngine.evaluate(values);
+    config.setAttribute("score", score);
+}
+
+// Select optimal
+MembraneNode best = psystem.selectOptimal("score", MAX);
+desEngine.applyConfiguration(extractValues(best));
+
+// Pattern 2: P-System for ABM agent cognition
+// Agent creates internal decision P-system
+class CognitiveAgent extends Agent {
+    PSystemEngine internalReasoning = new PSystemEngine(atomSpace);
+    
+    void makeDecision() {
+        // Create decision membranes for alternatives
+        List<Action> alternatives = getAvailableActions();
+        MembraneNode decisions = internalReasoning.createDecisionSpace(alternatives);
+        
+        // Parallel evaluation
+        internalReasoning.evaluateAll();
+        
+        // Select best action
+        Action best = internalReasoning.getOptimalAction();
+        execute(best);
+    }
+}
+
+// Pattern 3: P-System with SD population dynamics
+// SD controls population-level parameters
+double birthRate = sdEngine.getStock("BirthRate");
+double deathRate = sdEngine.getStock("DeathRate");
+
+// P-System models individual membranes
+for (MembraneNode membrane : psystem.getActiveMembranes()) {
+    if (shouldDivide(membrane, birthRate)) {
+        psystem.divideMembrane(membrane);
+    }
+    if (shouldDissolve(membrane, deathRate)) {
+        psystem.dissolveMembrane(membrane);
+    }
+}
+
+// Aggregate back to SD
+int population = psystem.getMembraneCount();
+sdEngine.setFlow("Population", population);
+```
+
+### Advanced P-System Features
+
+```java
+// Probabilistic rules
+RuleNode probRule = new RuleNode("prob_rule");
+probRule.setPattern("a");
+probRule.setReplacement("b", 0.7);    // 70% chance
+probRule.setReplacement("c", 0.3);    // 30% chance
+
+// Timed/delayed rules
+RuleNode timedRule = new RuleNode("timed_rule");
+timedRule.setPattern("a");
+timedRule.setReplacement("b");
+timedRule.setDelay(5);  // Apply after 5 time units
+
+// Catalytic rules (object not consumed)
+RuleNode catalyticRule = new RuleNode("catalytic");
+catalyticRule.setPattern("a", "e");       // Need 'a' and 'e'
+catalyticRule.setReplacement("b", "e");   // Consume 'a', keep 'e'
+
+// Promoters and inhibitors
+RuleNode regulatedRule = new RuleNode("regulated");
+regulatedRule.setPattern("a");
+regulatedRule.setReplacement("b");
+regulatedRule.addPromoter("p");   // Only if 'p' present
+regulatedRule.addInhibitor("i");  // Never if 'i' present
+
+// Bounded division (prevent exponential explosion)
+psystem.setMaxDivisionDepth(10);
+psystem.setMaxMembraneCount(1024);
+psystem.enablePruning(true);
+
+// Performance monitoring
+PSystemMetrics metrics = psystem.getMetrics();
+System.out.println("Steps: " + metrics.getSteps());
+System.out.println("Parallelism: " + metrics.getAvgParallelism());
+System.out.println("Memory: " + metrics.getMemoryUsage());
+```
 
 ## Next Steps
 
 - Read the [Full Integration Guide](integration_guide.md) for detailed patterns
 - Study the [Supply Chain Example](../examples/integrated_supply_chain.md)
+- Study the [P-System SAT Solver Example](../examples/psystem_sat_solver.md)
+- Review [P-System Documentation](psystem_membrane_computing.md)
 - Review [Autognosis Documentation](autognosis_integration.md)
 - Explore [OpenCog Architecture](opencog_architecture.md)
 

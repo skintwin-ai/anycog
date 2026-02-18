@@ -132,6 +132,33 @@ Simulates continuous fluid and bulk material flows.
 - Uses InfluenceLinks for flow relationships
 - Can interact with Process Flow Engine for batches
 
+#### 2.7 P-System Membrane Computing Engine (Parallel Bio-Computation)
+
+Provides massively parallel, bio-inspired computation through hierarchical membranes.
+
+**Key Functions:**
+- Hierarchical membrane structure management
+- Maximal parallel rule application
+- Object evolution via rewriting rules
+- Dynamic topology (division, dissolution, merging)
+- Transport operations across membrane boundaries
+
+**Integration Points:**
+- Uses MembraneNode for compartment hierarchy
+- Uses ObjectNode for multiset elements
+- Uses RuleNode for evolution and transport rules
+- Creates EvolutionLink, TransportLink, DivisionLink, DissolveLink
+- Provides parallel computation services to other engines
+- Can model cellular processes or solve optimization problems
+
+**Variants Supported:**
+- Cell-like P-systems (hierarchical trees)
+- Tissue P-systems (network structures)
+- Neural P-systems (spiking, with delays)
+- Active membrane P-systems (with division/dissolution)
+
+**Reference:** See `references/psystem_membrane_computing.md` for complete documentation
+
 ### Layer 3: Meta-Cognitive Layer (Pattern Recognition)
 
 This layer identifies higher-order patterns across the integrated simulation.

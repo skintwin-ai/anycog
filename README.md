@@ -31,22 +31,24 @@ AnyCog is a comprehensive framework for building integrated, multi-paradigm simu
 
 ```
 anycog/
-├── SKILL.md                          # Main workflow documentation
-├── README.md                         # This file
+├── SKILL.md                             # Main workflow documentation
+├── README.md                            # This file
 ├── references/
-│   ├── opencog_architecture.md       # Core architecture specification
-│   ├── integration_guide.md          # Detailed integration patterns
-│   ├── autognosis_integration.md     # Self-optimization documentation
-│   ├── paradigms.md                  # Modeling paradigm reference
-│   ├── process_modeling_library.md   # DES blocks reference
-│   ├── material_handling_library.md  # MH blocks reference
-│   └── other_libraries.md            # Movement & Fluid blocks reference
+│   ├── opencog_architecture.md          # Core architecture specification
+│   ├── integration_guide.md             # Detailed integration patterns
+│   ├── autognosis_integration.md        # Self-optimization documentation
+│   ├── paradigms.md                     # Modeling paradigm reference
+│   ├── psystem_membrane_computing.md    # P-system reference documentation
+│   ├── process_modeling_library.md      # DES blocks reference
+│   ├── material_handling_library.md     # MH blocks reference
+│   └── other_libraries.md               # Movement & Fluid blocks reference
 ├── examples/
-│   ├── integrated_supply_chain.md    # Complete integrated example
-│   ├── basicmodels/                  # AnyLogic basic examples
-│   ├── bigbookmodels/                # AnyLogic advanced examples
-│   ├── models/                       # Additional examples
-│   └── sdmodels/                     # System dynamics examples
+│   ├── integrated_supply_chain.md       # Complete integrated example
+│   ├── psystem_sat_solver.md            # P-system SAT solver example
+│   ├── basicmodels/                     # AnyLogic basic examples
+│   ├── bigbookmodels/                   # AnyLogic advanced examples
+│   ├── models/                          # Additional examples
+│   └── sdmodels/                        # System dynamics examples
 ```
 
 ## Getting Started
@@ -124,6 +126,7 @@ Specialized engines operating on the AtomSpace:
 - **Material Flow Engine (MH)**: Conveyors, transporters, warehouses
 - **Movement Engine**: Pedestrians, vehicles, trains
 - **Fluid Dynamics Engine**: Tanks, pipelines, continuous flows
+- **P-System Membrane Computing**: Bio-inspired parallel computation, membrane hierarchies, massively parallel rule execution
 
 ### Meta-Cognitive Layer (Layer 3)
 
@@ -179,6 +182,7 @@ Self-awareness and optimization:
 - **Fluid**: Chemical batch processing
 - **ABM**: Worker behavior and learning
 - **SD**: Overall throughput dynamics
+- **P-System**: Parallel scheduling optimization
 
 ### Urban Mobility
 - **Movement**: Pedestrian, vehicle, and rail flows
@@ -191,6 +195,18 @@ Self-awareness and optimization:
 - **ABM**: Individual patient and staff behaviors
 - **SD**: Resource capacity planning
 - **Meta-Cognitive**: Bottleneck identification
+
+### Computational Biology
+- **P-System**: Cellular processes and membrane dynamics
+- **ABM**: Cell-to-cell interactions
+- **SD**: Population-level biological dynamics
+- **Meta-Cognitive**: Emergent pattern discovery
+
+### Optimization and Search
+- **P-System**: Massively parallel search (NP-complete problems)
+- **DES**: Sequential constraint checking
+- **ABM**: Distributed algorithm coordination
+- **Meta-Cognitive**: Solution quality analysis
 
 ## Benefits
 
