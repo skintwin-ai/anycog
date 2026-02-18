@@ -96,8 +96,13 @@ RuleNode divRule1 = new RuleNode("div_step1");
 divRule1.setMembrane(generator);
 divRule1.setPattern("encode");
 divRule1.setReplacement(
-    membrane1: {objects: ["encode"], assignment: "x1=T"},
-    membrane2: {objects: ["encode"], assignment: "x1=F"}
+    new MembraneReplacement()
+        .addMembrane(new MembraneSpec()
+            .addObject("encode")
+            .addAssignment("x1", true))
+        .addMembrane(new MembraneSpec()
+            .addObject("encode")
+            .addAssignment("x1", false))
 );
 divRule1.setAction(DivisionAction.SPLIT_BINARY);
 divRule1.setTargetCount(2); // Creates 2 membranes
@@ -535,12 +540,9 @@ public class CognitiveAgent extends Agent {
     
     @Override
     public void makeDecision() {
-        // Create decision P-system
-        MembraneNode decisionSpace = internalReasoning.createMembraneHierarchy(
-            alternatives: getAvailableActions(),
-            beliefs: getCurrentBeliefs(),
-            goals: getCurrentGoals()
-        );
+        // Create decision P-system with available actions as alternatives
+        List<Action> availableActions = getAvailableActions();
+        MembraneNode decisionSpace = internalReasoning.createDecisionSpace(availableActions);
         
         // Parallel evaluation of all alternatives
         internalReasoning.evaluateAlternatives();
@@ -553,10 +555,10 @@ public class CognitiveAgent extends Agent {
         
         // Share decision with other agents
         messageBus.broadcast(new AgentMessage(
-            from: this.getId(),
-            type: "DecisionMade",
-            action: bestAction,
-            rationale: internalReasoning.getExplanation()
+            this.getId(),
+            "DecisionMade",
+            bestAction,
+            internalReasoning.getExplanation()
         ));
     }
 }
@@ -822,7 +824,7 @@ public class PSystemSelfOptimizer {
         }
         
         // Optimization 4: Early pruning
-        if (profile.solutionQuality == "suboptimal") {
+        if ("suboptimal".equals(profile.solutionQuality)) {
             proposeOptimization("Add heuristic pruning rules");
         }
     }

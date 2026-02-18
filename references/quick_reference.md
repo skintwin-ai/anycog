@@ -597,30 +597,30 @@ if (report.hasViolations()) {
 
 ```java
 // Create membrane hierarchy
-MembraneNode skin = atomSpace.createNode(MembraneNode, "Skin");
-MembraneNode region1 = atomSpace.createNode(MembraneNode, "Region1");
-atomSpace.createLink(ContainmentLink, skin, region1);
+MembraneNode skin = atomSpace.createNode("MembraneNode", "Skin");
+MembraneNode region1 = atomSpace.createNode("MembraneNode", "Region1");
+atomSpace.createLink("ContainmentLink", skin, region1);
 
 // Create objects (multisets)
-ObjectNode objA = atomSpace.createNode(ObjectNode, "molecule_a");
+ObjectNode objA = atomSpace.createNode("ObjectNode", "molecule_a");
 atomSpace.setValue(region1, objA, 5); // 5 copies in region1
 
 // Create evolution rules
-RuleNode evolveRule = atomSpace.createNode(RuleNode, "reaction_1");
+RuleNode evolveRule = atomSpace.createNode("RuleNode", "reaction_1");
 evolveRule.setPattern("a");           // Consumes 'a'
 evolveRule.setReplacement("b,b");     // Produces two 'b'
 evolveRule.setMembrane(region1);      // Applies in region1
 evolveRule.setPriority(1);            // Priority 1
 
 // Create transport rules
-RuleNode transportRule = atomSpace.createNode(RuleNode, "transport_1");
+RuleNode transportRule = atomSpace.createNode("RuleNode", "transport_1");
 transportRule.setPattern("a");        // Consumes 'a'
 transportRule.setDirection("in");     // Move into child membrane
 transportRule.setMembrane(skin);      // Applies at skin boundary
 
 // Link rules to membranes
-atomSpace.createLink(EvolutionLink, evolveRule, region1);
-atomSpace.createLink(TransportLink, transportRule, skin);
+atomSpace.createLink("EvolutionLink", evolveRule, region1);
+atomSpace.createLink("TransportLink", transportRule, skin);
 ```
 
 ### P-System Execution

@@ -608,6 +608,114 @@ Validate P-system behavior:
 
 **Benefits:** Biologically plausible, temporal computation
 
+## Testing and Validation
+
+### Unit Testing
+
+Test individual P-system components:
+
+```java
+@Test
+public void testMembraneHierarchy() {
+    // Test membrane structure creation
+    MembraneNode skin = atomSpace.createNode("MembraneNode", "Skin");
+    MembraneNode child = atomSpace.createNode("MembraneNode", "Child");
+    atomSpace.createLink("ContainmentLink", skin, child);
+    
+    // Verify parent-child relationship
+    assertTrue(psystem.isChildOf(child, skin));
+    assertEquals(skin, psystem.getParent(child));
+}
+
+@Test
+public void testRuleApplication() {
+    // Test rule applicability and execution
+    RuleNode rule = createTestRule("a", "b,b");
+    MembraneNode membrane = createTestMembrane();
+    atomSpace.addObject(membrane, "a", 3);
+    
+    // Verify rule is applicable
+    assertTrue(psystem.isRuleApplicable(rule, membrane));
+    
+    // Apply rule
+    psystem.applyRule(rule, membrane);
+    
+    // Verify result
+    assertEquals(2, atomSpace.getObjectCount(membrane, "a"));
+    assertEquals(2, atomSpace.getObjectCount(membrane, "b"));
+}
+
+@Test
+public void testDivision() {
+    // Test membrane division
+    MembraneNode parent = createTestMembrane();
+    List<MembraneNode> children = psystem.divideMembrane(parent, 2);
+    
+    assertEquals(2, children.size());
+    assertTrue(psystem.isChildOf(children.get(0), parent));
+    assertTrue(psystem.isChildOf(children.get(1), parent));
+}
+
+@Test
+public void testDissolution() {
+    // Test membrane dissolution
+    MembraneNode parent = createTestMembrane();
+    MembraneNode child = createTestMembrane();
+    atomSpace.createLink("ContainmentLink", parent, child);
+    atomSpace.addObject(child, "x", 5);
+    
+    // Dissolve child
+    psystem.dissolveMembrane(child);
+    
+    // Verify objects transferred to parent
+    assertEquals(5, atomSpace.getObjectCount(parent, "x"));
+    assertFalse(psystem.exists(child));
+}
+```
+
+### Integration Testing
+
+Test P-system integration with other engines:
+
+```java
+@Test
+public void testPSystemDESIntegration() {
+    // Test P-system optimization of DES parameters
+    ProcessFlowEngine des = new ProcessFlowEngine(atomSpace);
+    PSystemEngine psystem = new PSystemEngine(atomSpace);
+    
+    // P-system creates search space
+    MembraneNode searchSpace = psystem.createSearchSpace(
+        des.getOptimizableParameters()
+    );
+    
+    // Execute and verify
+    psystem.executeDivision(3);
+    assertEquals(8, psystem.getMembraneCount()); // 2^3
+}
+```
+
+### Property-Based Testing
+
+Test nondeterministic behavior:
+
+```java
+@Test
+public void testNondeterministicConvergence() {
+    // Run same P-system multiple times
+    for (int i = 0; i < 100; i++) {
+        PSystemEngine psystem = createTestPSystem();
+        psystem.run();
+        
+        // All runs should produce valid solutions
+        assertTrue(psystem.hasValidOutput());
+        
+        // But may produce different solutions (nondeterminism)
+        // So just verify correctness, not exact result
+    }
+}
+```
+
 ## Summary
 
 The P-System Membrane Computing Engine adds a powerful bio-inspired parallel computation paradigm to AnyCog's cognitive architecture. Its optimal design emphasizes:
@@ -617,6 +725,7 @@ The P-System Membrane Computing Engine adds a powerful bio-inspired parallel com
 3. **Hardware Awareness**: Designed for FPGA, GPU, or multi-core CPU
 4. **Seamless Integration**: Natural mapping to AtomSpace and other cognitive processes
 5. **Dynamic Flexibility**: Support for membrane division, dissolution, and reconfiguration
+6. **Comprehensive Testing**: Unit tests, integration tests, and property-based validation
 
 By integrating P-systems with DES, ABM, SD, and other paradigms, AnyCog enables modeling of complex systems that combine sequential processes, autonomous behavior, aggregate dynamics, and massively parallel computation—a true cognitive synergy impossible with single-paradigm approaches.
 
