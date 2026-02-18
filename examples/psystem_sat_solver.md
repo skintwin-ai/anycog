@@ -96,8 +96,9 @@ RuleNode divRule1 = new RuleNode("div_step1");
 divRule1.setMembrane(generator);
 divRule1.setPattern("encode");
 // Configure membrane division with two children encoding variable x1
+// Note: MembraneReplacement and MembraneSpec are helper classes for configuration
 MembraneReplacement replacement = new MembraneReplacement();
-MembraneSpec child1 = new MembraneSpec(); // Helper class for membrane configuration
+MembraneSpec child1 = new MembraneSpec();
 child1.addObject("encode");
 child1.addAssignment("x1", true);
 MembraneSpec child2 = new MembraneSpec();
@@ -352,7 +353,7 @@ public class SolutionSelection {
         Map<String, Boolean> values = new HashMap<>();
         // Extract SAT variable assignments (pattern: x1, x2, x3, x4)
         for (String attrName : membrane.getAttributeNames()) {
-            // More robust check: matches "x" followed by digits
+            // Matches "x" followed by one or more digits (^x\\d+$)
             if (attrName.matches("^x\\d+$")) {
                 values.put(attrName, membrane.getAttribute(attrName));
             }
