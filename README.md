@@ -45,6 +45,7 @@ anycog/
 ├── examples/
 │   ├── integrated_supply_chain.md       # Complete integrated example
 │   ├── psystem_sat_solver.md            # P-system SAT solver example
+│   ├── torch_nn_neural_network.md       # Neural network training with torch/nn
 │   ├── basicmodels/                     # AnyLogic basic examples
 │   ├── bigbookmodels/                   # AnyLogic advanced examples
 │   ├── models/                          # Additional examples
@@ -83,16 +84,19 @@ Common patterns:
 - **ABM + SD**: Individual decisions affecting system-level stocks
 - **Multi-Engine**: Full cognitive synergy with all components
 
-### 4. Explore the Example
+### 4. Explore the Examples
 
-See a complete implementation:
+See complete implementations:
 - **[Integrated Supply Chain Example](examples/integrated_supply_chain.md)**: Full model with all cognitive layers
+- **[P-System SAT Solver](examples/psystem_sat_solver.md)**: Massively parallel computation for NP-complete problems
+- **[Torch/nn Neural Network](examples/torch_nn_neural_network.md)**: Neural network training as a cognitive architecture
 
-The example demonstrates:
-- Multi-paradigm integration (SD + DES + ABM + MH)
+The examples demonstrate:
+- Multi-paradigm integration (SD + DES + ABM + MH + P-System)
 - Cross-paradigm feedback loops
 - Meta-cognitive pattern mining
 - Autognosis-driven optimization
+- Neural architecture search and self-improvement
 
 ## Core Concepts
 
@@ -207,6 +211,14 @@ Self-awareness and optimization:
 - **DES**: Sequential constraint checking
 - **ABM**: Distributed algorithm coordination
 - **Meta-Cognitive**: Solution quality analysis
+
+### Neural Networks and Machine Learning
+- **DES**: Training loop iterations, batch processing
+- **ABM**: Individual neuron behaviors, weight updates
+- **SD**: Learning rate schedules, gradient dynamics
+- **P-System**: Parallel layer computations, backpropagation
+- **Meta-Cognitive**: Architecture optimization, hyperparameter tuning
+- **Autognosis**: Neural architecture search, self-improving networks
 
 ## Benefits
 
